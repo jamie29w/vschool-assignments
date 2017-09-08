@@ -1,0 +1,43 @@
+* {
+    background-color: #fffae4;
+    color: #242424;
+}
+
+.newsPaperName {
+    display: block;
+    font-size: 50px;
+    text-align: center;
+    width: auto;
+    height: 60 px;
+    font-style: italic;
+    margin-bottom: -30px;
+    margin-top: 10px;
+}
+
+h1 {
+    font-family: "Roboto Slab";
+}
+
+.fear {
+    font-style: italic;
+    color: #E81812;
+}
+
+.catPic {
+    display: block;
+    height: 50%;
+    width: 100%;
+    align-content: center;
+}
+
+p {
+    display: inline-block;
+    width: 30%;
+    height: 100px;
+    font-family: "Calibri";
+}
+
+.introPhrase {
+    text-transform: uppercase;
+    font-weight: bold;
+}

@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    font-size: 0px;
+}
+
+.box {
+    height: 150px;
+    border: solid 5px white;
+    display: inline-block;
+}
+
+.topPink {
+    background-color: #F5C6D6;
+    width: 100%;
+}
+
+.smallPinks {
+    background-color: #EE2E84;
+    width: 25%;
+}
+
+.blues {
+    background-color: #85CFD8;
+    width: 50%;
+}
+
+.green {
+    background-color: #8DC63F;
+    width: 75%;
+}
+
+.orange {
+    background-color: #E76E34;
+    width: 25%;
+}
