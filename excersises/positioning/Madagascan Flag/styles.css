@@ -1,0 +1,40 @@
+* {
+    font-size: 0px;
+    display: inline-block
+}
+
+.box {
+    position: absolute;
+    box-sizing: border-box;
+}
+
+.white{
+    background-color: #ffffff;
+    left: 0px;
+    width: 166px;
+    height: 300px;
+}
+
+.long {
+    width: 333px;
+    height: 150px;
+    right: 0px;
+}
+
+.red {
+    background-color: #FA4639;
+    top: 0px;
+}
+
+.green {
+    background-color: #228942;
+    bottom: 0px;   
+}
+
+.flag {
+/*    border: solid black 1px;*/
+    position: relative;
+    height: 300px;
+    width: 500px;
+    
+}

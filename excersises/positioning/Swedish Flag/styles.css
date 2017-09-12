@@ -1,0 +1,38 @@
+* {
+    font-size: 0px;
+    display: inline-block
+}
+
+.box {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: #1375B0;
+}
+
+.leftCorners {
+    width: 150px;
+    height: 120px;
+    left: 0px;
+}
+
+.rightCorners {
+    width: 290px;
+    height: 120px;
+    right: 0px
+}
+
+.top {
+    top: 0px;
+}
+
+.bottom {
+    bottom: 0px;
+}
+
+.flag {
+/*    border: solid black 1px;*/
+    position: relative;
+    height: 300px;
+    width: 500px;
+    background-color: #FED300;
+}

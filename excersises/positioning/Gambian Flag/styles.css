@@ -1,0 +1,37 @@
+* {
+    font-size: 0px;
+}
+
+.box {
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+}
+
+.red{
+    background-color: #D4112B;
+    left: 0px;
+    top: 0%;
+    height: 31%;
+}
+
+.blue {
+    background-color: #0B1D97;
+    top: 50%;
+    transform: translatey(-50%);
+    height: 28%;
+}
+
+.green {
+    background-color: #42822D;
+    bottom: 0%;
+    height: 31%;
+}
+
+.flag {
+    display: inline-block;
+    height: 300px;
+    width: 500px;
+    position: relative;
+    background-color: white;
+}

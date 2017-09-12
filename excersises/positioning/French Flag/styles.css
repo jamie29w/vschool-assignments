@@ -1,0 +1,28 @@
+* {
+    font-size: 0px;
+}
+
+.box {
+    width: 32.9%;
+    height: 300px;
+    display: inline-block
+}
+
+.blue{
+    background-color: #1600FF;
+    left: 0px;
+}
+
+.white {
+    background-color: #FFF7F7;
+}
+
+.red {
+    background-color: #F90E3E;
+}
+
+.flag {
+    display: inline-block;
+    height: 300px;
+    width: 500px;
+}
