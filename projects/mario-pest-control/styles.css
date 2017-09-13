@@ -1,0 +1,26 @@
+* {
+    color: #FEFEFE;
+    background-color: #ADCEE4;
+    margin: 30px;    
+}
+
+.headerWhole {
+    font-size: 45px;
+}
+
+.baddyDiv {
+    border: dotted #fefefe 1px;
+}
+
+.baddyPic {
+    height: 75px;
+    width: auto;
+}
+
+.baddyDiv > p {
+    font-size: 12px;
+}
+
+.footerWhole {
+    text-align: center;
+}
