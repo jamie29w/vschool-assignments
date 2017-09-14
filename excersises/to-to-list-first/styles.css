@@ -1,0 +1,30 @@
+* {
+    background-color: #506068;
+}
+
+body {
+    background-color: #506068;
+    
+}
+
+h1.header {
+    text-align: center;
+    font-size: 4em;
+    color: whitesmoke;
+}
+
+form.input {
+    text-align: center;
+    color: whitesmoke;
+}
+
+.listItems {
+    font-size: 2em;
+    color: whitesmoke;
+}
+
+div.list {
+    width: 30%;
+    margin: auto;
+    text-align: left;
+}
