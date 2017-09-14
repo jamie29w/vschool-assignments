@@ -1,0 +1,56 @@
+* {
+    font-size: 0px;
+    display: inline-block
+}
+
+.box {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.flag {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    z-index: 10;
+/*    border: solid black .5px;*/
+}
+
+.stripe {
+    height: 33.33px;
+    width: 100%;
+}
+
+.odd {
+    background-color: #0d5eaf;
+}
+
+.cornerBox {
+    left: 0px;
+    top: 0px;
+    width: 166.66px;
+    height: 165px;
+    z-index: 50px;
+    background-color: #0d5eaf;
+}
+
+.cross {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: white;
+    
+}
+
+.vertCross {
+    width: 33.33px;
+    height: 166.66px;
+}
+
+.horizCross {
+    width: 166.66px;
+    height: 33.33px;
+}

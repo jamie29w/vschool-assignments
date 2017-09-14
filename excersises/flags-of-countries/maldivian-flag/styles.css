@@ -1,0 +1,48 @@
+* {
+    font-size: 0px;
+    display: inline-block
+}
+
+.box {
+    box-sizing: border-box;
+}
+
+.flag {
+    width: 500px;
+    height: 300px;
+    background-color: #d21034;
+    z-index: 10;
+    border: solid black .5px;
+}
+
+.innerRect {
+    width: 350px;
+    height: 175px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #007e3a;
+    
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    width: 135px;
+    height: 135px;
+    top: 50%;
+    left: 50%
+}
+
+.whiteCir {
+    transform: translate(-36%, -50%);
+    z-index: 80;
+    background-color: white;
+}
+
+.greenCir {
+    transform: translate(-18%, -50%);
+    z-index: 100;
+    background-color: #007e3a;
+}
