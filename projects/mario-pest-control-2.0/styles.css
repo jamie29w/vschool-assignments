@@ -1,0 +1,25 @@
+body {
+    background-color: #aee1fe;
+}
+
+.header {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.footer > div {
+    text-align: center;
+}
+
+.border {
+    border: 2px dotted black;
+}
+
+.baddyText > div {
+    font-size: 1.25em;
+}
+
+.totalCostText > div {
+    font-size: 2em;
+    text-align: center;
+}
