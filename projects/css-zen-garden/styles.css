@@ -1,37 +1,190 @@
-.headCont {
-    height: 275px;
-    position: relative;
-}
+/*         RESPONSIVE CSS BELOW         */
+/* DESKTOPS & UP */
+@media screen, (min-width: 992px) {
+    .headerLogoImg {
+        height: 150px;
+        margin-top:12vh;
+    }
+    .headerRow {
+        background: url(http://www.csszengarden.com/214/huntington.jpg);
+        background-size: cover;
+        height: 310px;
+        background-repeat: no-repeat;
+    }
+    
+    .headerCSSZen {
+        font-family: Julius Sans One, sans-serif;
+        color: #ffffff;
+        font-size: 3em;
+        height: 40px;
+        margin-top: 12vh;
+        text-align: left;
+    }
 
-.headImg {
-    height 275px;
-    display: inline;
-    z-index: -1;
-}
-
-.headBox1 {
-    position: absolute;
-    top: 100px;
-    left: 200px;
-}
-
-.headBox2 {
-/*    background-color: #0e4d4a;*/
-}
-
-.headText {
-    font-family: Julius Sans One, sans-serif;
-    color: #ffffff;
-        
+    .headerBeautyOf {
+        font-family: Libre Baskerville, sans-serif;
+        font-style: italic;
+        font-size: 1.5em;
+        text-align: left;
+        color: #A1BDBA;
+        margin-top: .5vh;
+        text-align: left;
+    }
+    
+    .button {
+        background-color: rgba(39, 105, 105, 0.5);
+        opacity: .4;
+        height: 50px;
+        background-repeat:no-repeat;
+        overflow: hidden;
+        margin-top: 20vh;
+        font-family: Julius Sans One, sans-serif;
+        color: rgba(176, 198, 198, 1.0);
     }
 }
 
-.headSubText {
-    font-family: Libre Baskerville, sans-serif;
-    font-style: italic;
-    color: #a1bdb8;
+/* TABLETS */
+@media screen and (max-width: 991px), (min-width: 768px) {
+    .headerLogoImg {
+        height: 100px;
+        margin-top:12vh;
+    }
+    
+    .headerRow {
+        background: url(http://www.csszengarden.com/214/huntington.jpg);
+        background-size: cover;
+        height: 310px;
+        background-repeat: no-repeat;
+    }
+    
+    .headerCSSZen {
+        font-family: Julius Sans One, sans-serif;
+        color: #ffffff;
+        font-size: 3em;
+        height: 40px;
+        margin-top: vh;
+        text-align: center;
+    }
+
+    .headerBeautyOf {
+        font-family: Libre Baskerville, sans-serif;
+        font-style: italic;
+        font-size: 1.5em;
+        text-align: left;
+        color: #A1BDBA;
+/*        margin-top: .2vh;*/
+        text-align: center;
+    }
+    
+    .button {
+        background-color: rgba(39, 105, 105, 0.5);
+        opacity: .4;
+        height: 50px;
+        background-repeat:no-repeat;
+        overflow: hidden;
+        margin-top: 20vh;
+        font-family: Julius Sans One, sans-serif;
+        color: rgba(176, 198, 198, 1.0);
+    }
 }
 
-.btn {
+/* PHONES */
+@media screen and (max-width: 767px) {
+    .headerLogoImg {
+        height: 50px;
+        margin-top:1vh;
+    }
+    .headerRow {
+        background: url(http://www.csszengarden.com/214/huntington.jpg);
+        background-size: cover;
+        height: 310px;
+        background-repeat: no-repeat;
+    }
+    
+    .headerCSSZen {
+        font-family: Julius Sans One, sans-serif;
+        color: #ffffff;
+        font-size: 3em;
+        height: 40px;
+        margin-top: 16vh;
+    }
+
+    .headerBeautyOf {
+        font-family: Libre Baskerville, sans-serif;
+        font-style: italic;
+        font-size: 1.5em;
+        text-align: left;
+        color: #A1BDBA;
+        margin-top: .5vh;
+    }
+    
+    .button {
+        background-color: rgba(39, 105, 105, 0.5);
+        opacity: .4;
+        height: 50px;
+        background-repeat:no-repeat;
+        overflow: hidden;
+        margin-top: 20vh;
+        font-family: Julius Sans One, sans-serif;
+        color: rgba(176, 198, 198, 1.0);
+    }
+}
+
+/*         RESPONSIVE CSS ABOVE         */
+/*         NO RESPONSIVE CSS BELOW      */
+
+
+
+
+
+
+
+.italicCSS {
+    font-style: italic;
+}
+
+.row2Col1 {
+    background-color: #ffffff;
+    line-height: 22px
+}
+
+.row2Col1BodyText {
+    font-family: Libre Baskerville, sans-serif;
+    font-size: .9em;
+}
+
+.row2Col1Headers {
     font-family: Julius Sans One, sans-serif;
+    font-size: 2.1em;
+
+}
+
+.row2Col2 {
+    background-color: #E8EFEB;
+    height: 100%;
+}
+
+.row2Col2Sect {
+    vertical-align: middle;
+    margin: 14px;
+    margin-left: 15%;
+}
+
+.row2Col2ThemeLinks {
+    font-family: Julius Sans One, sans-serif;
+    font-size: 1.3em;
+    color: #616857;
+}
+
+.row2Col2NameLinks {
+    font-family: Libre Baskerville, sans-serif;
+    font-size: .9em;
+    color: #616857;
+}
+
+.row2Col2By {
+    font-family: Libre Baskerville, sans-serif;
+    font-size: .9em;
+    font-style: italic;
+    color: #C7D0CB;
 }
