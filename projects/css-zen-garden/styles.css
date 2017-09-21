@@ -134,10 +134,10 @@
 /*         NO RESPONSIVE CSS BELOW      */
 
 
-
-
-
-
+@font-face {
+    font-family: "verdemoderna";
+    src: url(assets/verdemoderna.woff) format('woff');
+}
 
 .italicCSS {
     font-style: italic;
@@ -156,7 +156,6 @@
 .row2Col1Headers {
     font-family: Julius Sans One, sans-serif;
     font-size: 2.1em;
-
 }
 
 .row2Col2 {
@@ -166,8 +165,8 @@
 
 .row2Col2Sect {
     vertical-align: middle;
-    margin: 14px;
-    margin-left: 15%;
+    padding: 14px;
+    padding-left: 15%;
 }
 
 .row2Col2ThemeLinks {
@@ -188,3 +187,114 @@
     font-style: italic;
     color: #C7D0CB;
 }
+
+.row3 {
+    background:url(http://www.csszengarden.com/214/bamboo.png);
+    background-color: #acd3bd;
+}
+
+.row3Col1 {
+    
+    line-height: 22px
+}
+
+.row3Col1BodyText {
+    font-family: Libre Baskerville, sans-serif;
+    font-size: .9em;
+}
+
+.row3Col1Headers {
+    font-family: Julius Sans One, sans-serif;
+    font-size: 2.1em;
+}
+
+.row3Col2 {
+    height: 100%;
+}
+
+.row3Col2Sect {
+    vertical-align: middle;
+    padding: 20px;
+    padding-left: 15%;
+}
+
+.row3Col2Text {
+    font-family: Julius Sans One, sans-serif;
+    font-size: 1.3em;
+    color: #616857;
+}
+
+.row4Col1 {
+    background-color: #ffffff;
+    line-height: 22px
+}
+
+.row4Col1BodyText {
+    font-family: Libre Baskerville, sans-serif;
+    font-size: .9em;
+}
+
+.row4Col1Headers {
+    font-family: Julius Sans One, sans-serif;
+    font-size: 2.1em;
+}
+
+.row4Col2 {
+    background-color: #E8EFEB;
+    height: 100%;
+}
+
+.row5 {
+    background:url(http://www.csszengarden.com/214/koi.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 250px;
+}
+
+.row5Col1BodyText {
+    font-family: Libre Baskerville, sans-serif;
+    font-size: 1.8em;
+    font-style: italic;
+    color: #99AEAA;
+    text-align: center;
+    padding-top: 9%;
+}
+
+.row5Col1Link {
+    font-style: normal;
+    color: #CCD7D6;
+}
+
+.row6 {
+    background-color: #124C51;
+    height: 125px;
+}
+
+.row6Text {
+    font-family: verdemoderna;
+    text-align: center;
+    font-size: 5em;
+    padding-top: 3%;
+    color: #94ABAD;
+}
+
+.letterLink:hover {
+    text-transform: uppercase
+}
+
+.numLink3:hover {
+    display:none;
+}
+
+.numLink3:hover:before {
+    content:"#";
+}
+
+/*
+.numLink5:hover {
+    display:none;
+}
+
+.numLink5:hover:before {
+    content:"%"
+}*/
