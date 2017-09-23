@@ -1,0 +1,37 @@
+.space {
+    box-sizing: border-box;
+    border: 1px dotted blue;
+}
+
+.navBar {
+    text-align: center;
+    font-family: muli;
+}
+
+.navBar > a {
+    margin-left: 20px;
+    margin-right: 20px;
+/*    margin-bottom: 20px;*/
+}
+
+.headerRow {
+    padding-top: 8%;
+}
+
+.headerText {
+    text-align: center;
+    font-size: 3.5em;
+    font-family: Josefin Sans;
+}
+
+.bodyRow {
+    padding-top: 8%;
+}
+
+.heading {
+    font-family: muli;
+}
+
+.bodyText {
+    font-family: Josefin Sans;
+}

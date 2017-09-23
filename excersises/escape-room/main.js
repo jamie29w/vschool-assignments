@@ -5,18 +5,7 @@ var hasTheKey = false;
 var name = readline.question("What is your name? ");
     console.log("That doesn't matter anyway. You're locked in this room, and you're going to die if you don't get out.");
 
-while (gameIsOn === true) {
-    if (gameIsOn === false) {
-        break
-    }
-    choices = ['Try the Door', 'Reach into the small, dark hole in the wall', 'Hopelessly search the room'];
-
-    var action = parseInt(readline.keyInSelect(choices, "What do you want to do?") + 1);
-    console.log(action);
-
-    runAction(action);
-
-    function runAction(num1) {
+function runAction(num1) {
         if (num1 === 1 && hasTheKey === false) {
             console.log("The door is locked. What do you want to do now?\n");
         } else if
@@ -66,5 +55,16 @@ while (gameIsOn === true) {
             console.log("Given up? You died a slow and hungry death.\n");
             return gameIsOn = false;
         }
+}
+
+while (gameIsOn === true) {
+    if (gameIsOn === false) {
+        break
     }
+    choices = ['Try the Door', 'Reach into the small, dark hole in the wall', 'Hopelessly search the room'];
+
+    var action = parseInt(readline.keyInSelect(choices, "What do you want to do?") + 1);
+    console.log(action);
+
+    runAction(action);
 }

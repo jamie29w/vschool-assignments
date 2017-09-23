@@ -1,82 +1,88 @@
 var ask = require("readline-sync");
-
-//var grid =[];
-//create for loop (loopA) to push num1 0s to grid
-//create for loop (loobB) to run loopA num1 times
-//nest loops
-//insert into function
-//call function with arg num1
-
 var grid =[];
+var score = 0;
+var gameIsOn = true;
 
-function gridMeister(num1, num2) {    
+
+//SPACE CONSTRUCTOR FUNCTION
+function Location(isShip, isHit, display) {
+    this.isShip = false;
+    this.isHit = false;
+    this.display = "~";
+};
+
+
+//GRID GENERATOR
+function gridGen(num1, num2) {    
     for (var z = 0; z < num1; z++) {
         grid.push([]);
         for (var i = 0; i < num2; i++) {
-            grid[z].push(0);
+            var newLocation = new Location(false, false, "~");
+            grid[z].push(newLocation);
         }
     }
-    return grid;
+    return (grid);
 };
 
-console.log(gridMeister(10, 10));
-console.log("");
 
-//LOCATION GENERATOR
-//randomly select 10 sets of x and y coordinates
-//change each from 1 to 9 - DO NOT CONSOLE.LOG IN GAME
-
-function locationGen(num1) {
+//SHIP GENERATOR
+function shipGen(num1) {
     var a = 0;
     var b = 0;
-    var gridSum = 0;    
     for (var i = 0; i < num1; i++) {
         var a = Math.floor(Math.random() *10);
         var b = Math.floor(Math.random() *10);
-        grid[b][a] = 7;
+        grid[b][a].isShip = true;
     }
     return grid;
 };
-console.log(locationGen(10));
 
 
-//function locationGen(num1) {
-//    var a = 0;
-//    var b = 0;
-//    var gridSum = 0;    
-//    for (gridSum = 0; gridSum < 71;) {
-//        var a = Math.floor(Math.random() *10);
-//        var b = Math.floor(Math.random() *10);
-//        grid[b][a] = 7;
-//        gridSum = grid.reduce(function(sum, number) {
-//            return sum + number;
-//        });
-//    }
-//    return grid;
-//};
-//console.log(locationGen(10));
+//CHECKCOORDS FUNCTION
+function checkCoords(num1) {
+    if (num1 !== 0 && num1 !== 1 && num1 !== 2 && num1 !== 3 && num1 !== 4 && num1 !== 5 && num1 !== 6 && num1 !== 7 && num1 !== 8 && num1 !== 9) {
+        num1 = 0;
+    }
+};
+
+//ATTACK FUNCTION
+function attack(x, y) {
+    if (grid[y][x].isShip === true && grid[y][x].isHit === false) {
+        score++;
+        grid[y][x].isHit = true;
+        console.log("Captain, that's a HIT!!")
+    } else {
+        grid[y][x].isHit = true;
+        console.log("Looks like we missed, Captain.")
+    }
+};
+
+//GAME CONTINUE
+function gameContinueCheck() {
+    if (score >= 3) {
+        console.log("Great sailing, Captain " + name + "! You've won this battle!");
+        gameIsOn = false;
+    }
+}
+
+gridGen(10, 10);
+console.log(shipGen(20));
+
+var name = ask.question("Hi there captain! What's your name?")
+console.log("Kindly met, Captain " + name + ", and just in time! Help us win this battle!")
 
 
+while (gameIsOn === true) {
+    if (gameIsOn === false) {
+        break
+    }
+    
+    var x = ask.question("Please provide an X coordinate for your attack: 0-9.");
+    var y = ask.question("Please provide a Y coordinate for your attack: 0-9.");
 
-//crossed X & Y coordinates too make more pleasurable experience
-
-//var x = parseInt(ask.question("Enter X coordinate, 1-10: ") - 1);
-//var y = parseInt(ask.question("Enter Y coordinate, 1-10: ") -1);
-//
-//grid[y][x] = 1;
-//
-//console.log(grid);
-
-
-
-//considering inverting y axis
-//0 => 10   9
-//1 => 9    8
-//2 => 8    6
-//3 => 7    4
-//4 => 6    2
-//5 => 5    0
-//6 => 4    -2
-//7 => 3    -4
-//8 => 2    -6
-//9 => 1    -8
+    checkCoords(x);
+    checkCoords(y);
+//    console.log(x, y);
+    attack(x, y);
+    gameContinueCheck();
+}

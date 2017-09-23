@@ -1,19 +1,39 @@
-var playerName = "";
+var ask = require('readline-sync');
+
+var isPlayerAlive = true;
+var isDonePlaying = "n";
 var inventory = [];
 var hpPlayer = (0);
 var hpEnemy = (0);
 
-function gameEntry() {
-//    console.log("Hi fellow traveler. Are you sure you want to make this journey? If so, what's your name?");
-    prompt("Hi fellow traveler. Are you sure you want to make this journey? If so, what's your name?", "playerName");
-    (document.getElementById("playerName").innerHTML = playerName);
-    return playerName;
-};
 
-gameEntry();
+var playerName = ask.question("Hi fellow traveler. Are you sure you want to make this journey? If so, what's your name?");
 
-function gameBegin() {
-    console.log("Well then, " + playerName + ", let's begin. When you're ready, please type w to walk.");
+var doesWalk = ask.question("It's good to meet you, " + playerName + ". My name is Roland. Around these parts, you'll want to type in w and then Enter to walk. Let's get moving. I'll walk with you.");
+
+while (isPlayerAlive === true) {
+    if (isPlayerAlive === false) {
+        break
+    }
+    keepWalking();   
 }
 
-gameBegin();
+//END OF FOR LOOP
+
+
+//DEFINE FUNCTIONS:
+
+function keepWalking(input) {
+    doesWalk = ask.question("Type w and Enter if you want to keep walking.");
+    if (doesWalk !== "w") {
+        isDonePlaying = ask.question("Are you done playing? Type y or n.");
+    };
+    if (isDonePlaying !== "n") {
+        console.log("Enjoy your other travels " + playerName + "!");
+        isPlayerAlive = false;
+    };
+    
+}
+
+//HAVE DEBUGGED ABOVE HERE
+
