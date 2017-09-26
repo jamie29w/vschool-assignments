@@ -1,3 +1,7 @@
+.container-fluid {
+    background-color: red;
+}
+
 .space {
     box-sizing: border-box;
     border: 1px dotted blue;
@@ -6,12 +10,12 @@
 .navBar {
     text-align: center;
     font-family: muli;
+    background-color: white;
 }
 
 .navBar > a {
     margin-left: 20px;
-    margin-right: 20px;
-/*    margin-bottom: 20px;*/
+    margin-right: 20px;    
 }
 
 .headerRow {
@@ -22,6 +26,7 @@
     text-align: center;
     font-size: 3.5em;
     font-family: Josefin Sans;
+    background-color: white;
 }
 
 .bodyRow {
@@ -30,6 +35,7 @@
 
 .heading {
     font-family: muli;
+    background-color: white;
 }
 
 .bodyText {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+       
+       <div class="siteHeaderRow">
+           <h1 class="siteHeaderText">Bomber Copter Rentals</h1>
+       </div>
+        <form name="travelForm" id="travelForm">
+            <h3>Personal Deets:</h3>
+                Name: <input name="fName" type="text" placeholder="Your Mom Gave You" class="inputField" id="fName" required>
+                <br>
+                Name: <input name="lName" type="text" placeholder="Your Dad Gave You" class="inputField" id="lName" required>
+            <br>
+                <input name="genderOpts" type="radio" value="male"> Male
+                <input name="genderOpts" type="radio" value="female"> Female
+                <input name="genderOpts" type="radio" value="unicorn"> Unicorn
+            <br>
+                Age: <input name="age" placeholder="##" type="number" class="numInputField" required id="age">
+            <br><br>
+            <h3>POW!</h3>
+                <input name="destOpts" type="checkbox" value="tahoeCityCA"> Lake Tahoe, CA
+                <input name="destOpts" type="checkbox" value="parkCityUT"> Park City, UT
+                <input name="destOpts" type="checkbox" value="aspenCO"> Aspen, CO
+            <br>
+            <h3>Dietary Preferences:</h3>
+                <input name="dietPrefs" type="checkbox" value="likesMeat"> Likes Meat
+                <input name="dietPrefs" type="checkbox" value="hatesVeggies"> Hates Veggies
+                <input name="dietPrefs" type="checkbox" value="mustHaveMoreMeat"> Must Have More Meat
+                <br><br>
+            <button type="button" id="datButtonDo">Let's Fly!</button>
+        </form>    
+    <script src="main.js"></script>
+</body>
+</html>

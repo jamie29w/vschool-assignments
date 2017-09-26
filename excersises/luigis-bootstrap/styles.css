@@ -1,0 +1,45 @@
+body {
+    font-family: SuperMario256;
+    height: 100%;
+}
+
+.topRow {
+    background-color: #FFDF08;
+    color: #EE2326;
+    font-family: SuperMario256;
+    font-size
+}
+
+.picRow {
+    background-color: #EE2326;
+}
+
+.aboutRow {
+    background-color: white;
+    color: #EE2326;
+    text-align: center;
+}
+
+.aboutText {
+    font-family: helvetica;
+}
+
+.luigiImgClass {
+    display: block;
+    margin: 0 auto;
+}
+
+.bottomRow {
+    background-color: #FFDF08;
+    height: 110px;
+}
+
+.mushImgClass {
+    max-height: 100px;
+    padding-top: 10px;
+}
+
+@font-face {
+    font-family: "SuperMario256";
+    src: url(assets/SuperMario256.ttf) format('truetype');
+}

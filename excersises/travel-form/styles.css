@@ -1,0 +1,29 @@
+body {
+    background:url(https://www.skinewgen.com/wp-content/uploads/resized.jpg);
+    color: #14181a;
+    text-shadow: 1px 0px 11px #FFFFFF;
+    height: 100%;
+}
+
+.siteHeaderRow {
+    text-align: right;
+    position: absolute;
+    right: 5%;
+    color: #14181a;
+    text-shadow: 1px 0px 24px #FFFFFF;
+}
+
+form {
+    text-align: right;
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.inputField {
+    width: 140px;
+}
+
+.numInputField {
+    width: 30px;
+}

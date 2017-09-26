@@ -1,0 +1,21 @@
+table {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: solid black 1px;
+    border-collapse: collapse;
+    width: 50%;
+    text-align: center;
+}
+
+td {
+    border: solid black 1px;
+}
+
+tr:nth-child(even) {  
+    background-color: #dddddd;
+}
+
+thead {
+    background-color: aquamarine;
+}

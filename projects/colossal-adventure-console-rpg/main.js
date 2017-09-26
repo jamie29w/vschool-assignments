@@ -33,7 +33,31 @@ function keepWalking(input) {
         isPlayerAlive = false;
     };
     
+//    doesEnemyAppear();
+    
 }
 
 //HAVE DEBUGGED ABOVE HERE
 
+function doesEnemyAppear() {
+    if (Math.floor(Math.random()) * 4 === 1) {
+        determineEnemy();
+    }
+}
+
+function determineEnemy() {
+    if (Math.floor(Math.random()) * 3 === 1) {
+        goblinAttacks();
+    } else if
+        (Math.floor(Math.random()) * 3 === 2) {
+        ogreAttacks();
+    } else if
+        (Math.floor(Math.random()) * 3 === 3) {
+        sauronAttacks();
+    }
+}
+
+
+function enemyAttacks() {
+    
+}
