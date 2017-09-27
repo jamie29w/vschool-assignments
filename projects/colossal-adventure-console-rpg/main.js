@@ -6,10 +6,9 @@ var player = {
     name: "",
     exp: 0,
     hp: 10,
+    strength: 7,
     inventory: []
 };
-
-player.strength = Math.floor(player.exp * 0.5) + 5;
 
 var darthVader = {
     name: "Darth Vader",
@@ -38,15 +37,15 @@ var sephiroth = {
 var sauron = {
     name: "Lord Sauron",
     exp: 100,
-    hp: 25,
-    giftHP: 25,
-    strength: 19,
+    hp: 100,
+    giftHP: 20,
+    strength: 35,
     inventory: [" lost a finger"]
 };
 
 player.name = ask.question("Welcome to bad guy hell! I hope you have legit super powers, cuz it's dangerous down here. What can we call you? \n");
 
-console.log("Well, it's to meet you, " + player.name + ". Around these parts, you'll want to keep moving. You can do that by typing 'w' as in walk, and 'Enter'. \n");
+console.log("Well, it's to meet you, " + player.name + ". Around these parts, you'll want to keep moving. You can do that by typing 'w' as in walk, and 'Return'. \n");
 
 while (isPlayerAlive === true) {
     if (isPlayerAlive === false) {
@@ -62,7 +61,7 @@ while (isPlayerAlive === true) {
 //DEFINE FUNCTIONS:
 
 function keepWalking(input) {
-    var doesWalk = ask.question("To keep walking, type 'w' and 'Enter'.\nTo see your stats and inventory, type 'i' and 'Enter'.\nTo quit playing, type 'q' and 'Enter'.\n");
+    var doesWalk = ask.question("To keep walking, type 'w' and 'Return'.\nTo see your stats and inventory, type 'i' and 'Return'.\nTo quit playing, type 'q' and 'Return'.\n");
     console.log("");
     if (doesWalk === "w") {
         doesEnemyAppear();
@@ -80,7 +79,6 @@ function keepWalking(input) {
 
 function doesEnemyAppear() {
     var ranNum = Math.floor(Math.random() * 3);
-    //    console.log(ranNum);
     if (ranNum === 1) {
         determineEnemy();
         isPlayerRunning();
@@ -118,7 +116,6 @@ function isPlayerRunning() {
 
 function isRunSuccessful() {
     var ranNum = Math.floor(Math.random() * 2);
-    console.log(ranNum);
     if (ranNum === 0) {
         console.log("You got away, but your dignity didn't. \n");
     } else if (ranNum === 1) {
@@ -143,6 +140,7 @@ function combat(enemy) {
             isPlayerAlive = false
         };
     };
+    battleReset();
 };
 
 function playerAttacks() {
@@ -163,4 +161,24 @@ function gainSpoils() {
     player.exp = player.exp + enemyIs.exp;
     player.strength = Math.floor(player.exp * .5) + 5;
     console.log(player.name + enemyIs.inventory + ", gained " + enemyIs.exp + " exp, and " + enemyIs.giftHP + " HP for slaying " + enemyIs.name + ". \n" + player.name + " now has " + player.hp + " HP, " + player.strength + " strength, and " + player.exp + " experience. \n")
+};
+
+function battleReset() {
+    player.strength = Math.floor(player.exp * 0.2) + 7;
+    
+    darthVader.hp = 5;
+    darthVader.strength++;
+    darthVader.giftHP++;
+    
+    voldemort.hp = 8
+    voldemort.strength++;
+    voldemort.giftHP++;
+    
+    sephiroth.hp = 12,
+    sephiroth.strength++;
+    sephiroth.giftHP++;
+    
+    sauron.hp = 25,
+    sauron.strength++;
+    sauron.giftHP++;
 };
