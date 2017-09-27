@@ -2,62 +2,165 @@ var ask = require('readline-sync');
 
 var isPlayerAlive = true;
 var isDonePlaying = "n";
-var inventory = [];
-var hpPlayer = (0);
-var hpEnemy = (0);
+var player = {
+    name: "",
+    exp: 0,
+    hp: 10,
+    inventory: []
+};
 
+player.strength = Math.floor(player.exp * 0.5) + 5;
 
-var playerName = ask.question("Hi fellow traveler. Are you sure you want to make this journey? If so, what's your name?");
+var darthVader = {
+    name: "Darth Vader",
+    exp: 5,
+    hp: 5,
+    giftHP: 3,
+    strength: 5,
+    inventory: [" acquired a red lightsaber"]
+};
+var voldemort = {
+    name: "Lord Voldemort",
+    exp: 10,
+    hp: 8,
+    giftHP: 6,
+    strength: 8,
+    inventory: [" acquired an elder wand"]
+};
+var sephiroth = {
+    name: "Sephiroth",
+    exp: 15,
+    hp: 12,
+    giftHP: 8,
+    strength: 11,
+    inventory: [" acquired spliced genes"]
+};
+var sauron = {
+    name: "Lord Sauron",
+    exp: 100,
+    hp: 25,
+    giftHP: 25,
+    strength: 19,
+    inventory: [" lost a finger"]
+};
 
-var doesWalk = ask.question("It's good to meet you, " + playerName + ". My name is Roland. Around these parts, you'll want to type in w and then Enter to walk. Let's get moving. I'll walk with you.");
+player.name = ask.question("Welcome to bad guy hell! I hope you have legit super powers, cuz it's dangerous down here. What can we call you? \n");
+
+console.log("Well, it's to meet you, " + player.name + ". Around these parts, you'll want to keep moving. You can do that by typing 'w' as in walk, and 'Enter'. \n");
 
 while (isPlayerAlive === true) {
     if (isPlayerAlive === false) {
-        break
-    }
-    keepWalking();   
-}
+        console.log(player);
+        console.log("GAME OVER.");
+        break;
+    };
+    keepWalking()
+};
 
 //END OF FOR LOOP
-
 
 //DEFINE FUNCTIONS:
 
 function keepWalking(input) {
-    doesWalk = ask.question("Type w and Enter if you want to keep walking.");
-    if (doesWalk !== "w") {
-        isDonePlaying = ask.question("Are you done playing? Type y or n.");
+    var doesWalk = ask.question("To keep walking, type 'w' and 'Enter'.\nTo see your stats and inventory, type 'i' and 'Enter'.\nTo quit playing, type 'q' and 'Enter'.\n");
+    console.log("");
+    if (doesWalk === "w") {
+        doesEnemyAppear();
+    } else if (doesWalk === "i") {
+        console.log(player);
+        console.log("");
+    } else if (doesWalk !== "w" && doesWalk !== "i") {
+        isDonePlaying = ask.question("Are you done playing? Type y or n. \n");
     };
     if (isDonePlaying !== "n") {
-        console.log("Enjoy your other travels " + playerName + "!");
+        console.log("Enjoy having a real life " + player.name + "! \n");
         isPlayerAlive = false;
     };
-    
-//    doesEnemyAppear();
-    
-}
-
-//HAVE DEBUGGED ABOVE HERE
+};
 
 function doesEnemyAppear() {
-    if (Math.floor(Math.random()) * 4 === 1) {
+    var ranNum = Math.floor(Math.random() * 3);
+    //    console.log(ranNum);
+    if (ranNum === 1) {
         determineEnemy();
-    }
-}
+        isPlayerRunning();
+    } else {
+        console.log("Nothing new around these parts.\n")
+    };
+};
 
 function determineEnemy() {
-    if (Math.floor(Math.random()) * 3 === 1) {
-        goblinAttacks();
-    } else if
-        (Math.floor(Math.random()) * 3 === 2) {
-        ogreAttacks();
-    } else if
-        (Math.floor(Math.random()) * 3 === 3) {
-        sauronAttacks();
-    }
-}
+    var ranNum = Math.floor(Math.random() * 15);
+    if (ranNum <= 5) {
+        enemyIs = darthVader;
+    } else if (ranNum > 5 && ranNum <= 10) {
+        enemyIs = voldemort;
+    } else if (ranNum > 10 && ranNum <= 13) {
+        enemyIs = sephiroth;
+    } else if (ranNum === 14) {
+        enemyIs = sauron
+    };
+};
 
+function isPlayerRunning() {
+    console.log("You've StumbleUpon'd a wild " + enemyIs.name + "!");
+    choices = ['Fight to the death!', 'Tuck tail and run...', 'Curl up and die...'];
+    var runFightOrDie = parseInt(ask.keyInSelect(choices, "What do you want to do? \n") + 1);
+    if (runFightOrDie === 1) {
+        combat(enemyIs);
+    } else if (runFightOrDie === 2) {
+        isRunSuccessful();
+    } else if (runFightOrDie === 3) {
+        console.log(enemyIs.name + " slaughtered your face, family, and foes alike. Thanks for letting us all down, " + player.name + ". GAME OVER.\n");
+        isPlayerAlive = false
+    };
+};
+
+function isRunSuccessful() {
+    var ranNum = Math.floor(Math.random() * 2);
+    console.log(ranNum);
+    if (ranNum === 0) {
+        console.log("You got away, but your dignity didn't. \n");
+    } else if (ranNum === 1) {
+        console.log("If you're lucky, they won't tell about how you tried to run before you died... \n");
+        combat(enemyIs)
+    };
+
+};
+
+
+function combat(enemy) {
+    while (enemyIs.hp > 0 && player.hp > 0) {
+        playerAttacks();
+        if (enemyIs.hp <= 0) {
+            console.log(enemyIs.name + " has been defeated! Great work, " + player.name + "!.\n");
+            gainSpoils();
+            break
+        };
+        enemyAttacks();
+        if (player.hp <= 0) {
+            console.log(enemyIs.name + " slaughtered your face, family, and foes alike. Thanks for letting us all down, " + player.name + ". GAME OVER.\n")
+            isPlayerAlive = false
+        };
+    };
+};
+
+function playerAttacks() {
+    enemyDamage = Math.floor(player.strength * Math.random());
+    enemyIs.hp = enemyIs.hp - enemyDamage;
+    console.log("You attacked " + enemyIs.name + " for " + enemyDamage + " damage! \n" + enemyIs.name + " has " + enemyIs.hp + " HP left.\n");
+};
 
 function enemyAttacks() {
-    
-}
+    playerDamage = Math.floor(enemyIs.strength * Math.random());
+    player.hp = player.hp - playerDamage;
+    console.log(enemyIs.name + " attacked you for " + playerDamage + " damage! \n" + "You have " + player.hp + " HP left.\n");
+};
+
+function gainSpoils() {
+    player.inventory.push(enemyIs.inventory);
+    player.hp = player.hp + enemyIs.giftHP;
+    player.exp = player.exp + enemyIs.exp;
+    player.strength = Math.floor(player.exp * .5) + 5;
+    console.log(player.name + enemyIs.inventory + ", gained " + enemyIs.exp + " exp, and " + enemyIs.giftHP + " HP for slaying " + enemyIs.name + ". \n" + player.name + " now has " + player.hp + " HP, " + player.strength + " strength, and " + player.exp + " experience. \n")
+};
