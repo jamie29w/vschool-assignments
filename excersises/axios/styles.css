@@ -1,0 +1,25 @@
+input {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+
+.toDoText {
+    font-weight: bold;
+}
+
+.descriptionText {
+    font-style: normal;
+}
+
+.priceText {
+    font-style: italic;
+}
+
+ul {
+    list-style: none;
+}
+
+input[type=checkbox]:checked + label {
+    text-decoration: line-through;
+}

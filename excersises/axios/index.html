@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row headRow">
+            <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0" id="tdForm">
+                <h1>Add One:</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <input name="inputTitle" type="text" placeholder="Your Next Task" class="inputField inputTitle" id="inputTitle" required>
+            </div>
+            <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <input name="inputDescrmdiption" type="text" placeholder="Description" class="inputField inputDescription" id="inputDescription">
+            </div>
+            <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <input name="inputPrice" type="text" placeholder="How much will it cost?" class="inputField inputPrice" id="inputPrice">
+            </div>
+            <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <button class="button btn btn-warning" id="btn" type="button">Add!</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-3 col-md-offset-0">
+                <h3>Current List:</h3>
+                <span id="currList">
+                </span>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

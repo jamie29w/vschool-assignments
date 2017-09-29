@@ -2,6 +2,7 @@ var ask = require('readline-sync');
 
 var isPlayerAlive = true;
 var isDonePlaying = "n";
+
 var player = {
     name: "",
     exp: 0,
@@ -42,6 +43,8 @@ var sauron = {
     strength: 35,
     inventory: [" lost a finger"]
 };
+
+
 
 player.name = ask.question("Welcome to bad guy hell! I hope you have legit super powers, cuz it's dangerous down here. What can we call you? \n");
 

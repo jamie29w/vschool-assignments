@@ -1,14 +1,14 @@
 {
     "appetizers":
-        [{"name": "brie", "ingredients": "brie cheese", "tastes like": "brie and bread"},
+        [{"name": "brie", "ingredients": "brie cheese, bread", "tastes like": "brie and bread"},
          {"name": "coldCuts", "ingredients": "salami, capicolla, ham, pepperoni", "tastes like": "someone cut meat and put it on a plate"}],
     "coldSandwiches":
         [{"name": "turkey bacon avocado", "ingredients": "don't ask", "tastes like": "you had to ask"},
          {"name": "ham and turkey", "ingredients": "see the name", "tastes like": "bread and meat - maybe mayo and mustard too"}],
     "hotSandwiches":
-        [{"name": "hotPastrami", "ingredients": "pastrami and hotness", "tastes like": "you bought it somewhere"},
-         {"name": "grilledCheese", "ingredients": "havarti, white cheddar, and mozarella", "tastes like": "your mom made it"}],
+        [{"name": "hotPastrami", "ingredients": "pastrami, hotness", "tastes like": "you bought it somewhere"},
+         {"name": "grilledCheese", "ingredients": "havarti, white cheddar, mozarella", "tastes like": "your mom made it"}],
     "desserts":
-        [{"name": "ice cream", "ingredients": "sugar and milk", "tastes like": "heaven on your tongue"},
-        {"name": "cake", "ingredients": "flour, milk, eggs, elbow, love", "tastes like": "your grandma made it"}]
+        [{"name": "ice cream", "ingredients": "sugar, milk, cold, churn", "tastes like": "heaven on your tongue"},
+        {"name": "chocolate cake", "ingredients": "flour, milk, eggs, cholcolate, arm workout, love", "tastes like": "your grandma made it"}]
 }
