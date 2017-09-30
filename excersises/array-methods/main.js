@@ -52,5 +52,3 @@ console.log(food);
 
 console.log("step 10");
 console.log(food.join(", "));
-
-

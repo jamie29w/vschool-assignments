@@ -1,9 +1,7 @@
-var form = document.getElementById("tdForm");
 var btn = document.getElementById("btn");
 var inputTitle = document.getElementById("inputTitle");
 var inputDescription = document.getElementById("inputDescription");
 var inputPrice = document.getElementById("inputPrice");
-var tehList = document.getElementById("tehList");
 var currList = document.getElementById("currList");
 
 function getList() {

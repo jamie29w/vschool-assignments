@@ -17,7 +17,7 @@ var darthVader = {
     hp: 5,
     giftHP: 3,
     strength: 5,
-    inventory: [" acquired a red lightsaber"]
+    inventory: ["red lightsaber"]
 };
 var voldemort = {
     name: "Lord Voldemort",
@@ -25,7 +25,7 @@ var voldemort = {
     hp: 8,
     giftHP: 6,
     strength: 8,
-    inventory: [" acquired an elder wand"]
+    inventory: ["elder wand"]
 };
 var sephiroth = {
     name: "Sephiroth",
@@ -33,7 +33,7 @@ var sephiroth = {
     hp: 12,
     giftHP: 8,
     strength: 11,
-    inventory: [" acquired spliced genes"]
+    inventory: ["spliced genes"]
 };
 var sauron = {
     name: "Lord Sauron",
@@ -41,7 +41,11 @@ var sauron = {
     hp: 100,
     giftHP: 20,
     strength: 35,
-    inventory: [" lost a finger"]
+    inventory: ["missing finger"]
+};
+
+const getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
 
@@ -69,7 +73,7 @@ function keepWalking(input) {
     if (doesWalk === "w") {
         doesEnemyAppear();
     } else if (doesWalk === "i") {
-        console.log(player);
+        console.log(`Player's Name: ${player.name}, HP: ${player.hp}, Strength: ${player.strength}, Experience: ${player.exp}, & Inventory: ${player.inventory}.`);
         console.log("");
     } else if (doesWalk !== "w" && doesWalk !== "i") {
         isDonePlaying = ask.question("Are you done playing? Type y or n. \n");
@@ -81,7 +85,7 @@ function keepWalking(input) {
 };
 
 function doesEnemyAppear() {
-    var ranNum = Math.floor(Math.random() * 3);
+    let ranNum = getRandomInt(0,3);
     if (ranNum === 1) {
         determineEnemy();
         isPlayerRunning();
@@ -91,7 +95,7 @@ function doesEnemyAppear() {
 };
 
 function determineEnemy() {
-    var ranNum = Math.floor(Math.random() * 15);
+    let ranNum = getRandomInt(0, 14);
     if (ranNum <= 5) {
         enemyIs = darthVader;
     } else if (ranNum > 5 && ranNum <= 10) {
@@ -118,7 +122,7 @@ function isPlayerRunning() {
 };
 
 function isRunSuccessful() {
-    var ranNum = Math.floor(Math.random() * 2);
+    let ranNum = getRandomInt(1,2);
     if (ranNum === 0) {
         console.log("You got away, but your dignity didn't. \n");
     } else if (ranNum === 1) {
@@ -159,11 +163,12 @@ function enemyAttacks() {
 };
 
 function gainSpoils() {
-    player.inventory.push(enemyIs.inventory);
+    player.inventory.push(" " + enemyIs.inventory);
     player.hp = player.hp + enemyIs.giftHP;
     player.exp = player.exp + enemyIs.exp;
     player.strength = Math.floor(player.exp * .5) + 5;
-    console.log(player.name + enemyIs.inventory + ", gained " + enemyIs.exp + " exp, and " + enemyIs.giftHP + " HP for slaying " + enemyIs.name + ". \n" + player.name + " now has " + player.hp + " HP, " + player.strength + " strength, and " + player.exp + " experience. \n")
+    console.log(`${player.name} acquired a ${enemyIs.inventory}, gained ${enemyIs.exp} experience, and ${enemyIs.giftHP} HP for slaying ${enemyIs.name}.`)
+    console.log(`${player.name} now has ${player.hp} HP, ${player.strength} strength, and ${player.exp} experience.`)
 };
 
 function battleReset() {
