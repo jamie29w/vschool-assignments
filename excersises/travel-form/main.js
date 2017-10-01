@@ -4,23 +4,23 @@ document.getElementById("datButtonDo").addEventListener("click", function() {
     // var fName = document.travelForm.fName.value;
     // var fName = document.getElementById("travelForm").fName.value;
     
-    var fName = document.getElementById("fName").value;
-    var lName = document.getElementById("lName").value;
-    var age = document.getElementById("age").value;
+    let fName = document.getElementById("fName").value;
+    let lName = document.getElementById("lName").value;
+    let age = document.getElementById("age").value;
 
-    var gender = document.getElementById("travelForm").genderOpts.value
+    let gender = document.getElementById("travelForm").genderOpts.value
 
-    var destOpts = document.getElementsByName("destOpts");
-    var destination = [];
-    for (var i = 0; i < destOpts.length; i++) {
+    let destOpts = document.getElementsByName("destOpts");
+    let destination = [];
+    for (let i = 0; i < destOpts.length; i++) {
         if (destOpts[i].checked === true) {
             destination.push(destOpts[i].value);
         }
     };
 
-    var dietPrefs = document.getElementsByName("dietPrefs");
-    var dietPreferance = [];
-    for (var i = 0; i < dietPrefs.length; i++) {
+    let dietPrefs = document.getElementsByName("dietPrefs");
+    let dietPreferance = [];
+    for (let i = 0; i < dietPrefs.length; i++) {
         if (dietPrefs[i].checked === true) {
             dietPreferance.push(dietPrefs[i].value);
         }

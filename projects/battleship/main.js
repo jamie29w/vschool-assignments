@@ -1,7 +1,7 @@
-var ask = require("readline-sync");
-var grid =[];
-var score = 0;
-var gameIsOn = true;
+const ask = require("readline-sync");
+const grid =[];
+let score = 0;
+let gameIsOn = true;
 
 
 //SPACE CONSTRUCTOR FUNCTION
@@ -14,10 +14,10 @@ function Location(isShip, isHit, display) {
 
 //GRID GENERATOR
 function gridGen(num1, num2) {    
-    for (var z = 0; z < num1; z++) {
+    for (let z = 0; z < num1; z++) {
         grid.push([]);
-        for (var i = 0; i < num2; i++) {
-            var newLocation = new Location(false, false, "~");
+        for (let i = 0; i < num2; i++) {
+            let newLocation = new Location(false, false, "~");
             grid[z].push(newLocation);
         }
     }
@@ -27,11 +27,11 @@ function gridGen(num1, num2) {
 
 //SHIP GENERATOR
 function shipGen(num1) {
-    var a = 0;
-    var b = 0;
-    for (var i = 0; i < num1; i++) {
-        var a = Math.floor(Math.random() *10);
-        var b = Math.floor(Math.random() *10);
+    let a = 0;
+    let b = 0;
+    for (let i = 0; i < num1; i++) {
+        let a = Math.floor(Math.random() *10);
+        let b = Math.floor(Math.random() *10);
         grid[b][a].isShip = true;
     }
     return grid;
@@ -68,7 +68,7 @@ function gameContinueCheck() {
 gridGen(10, 10);
 console.log(shipGen(20));
 
-var name = ask.question("Hi there captain! What's your name?")
+const name = ask.question("Hi there captain! What's your name?")
 console.log("Kindly met, Captain " + name + ", and just in time! Help us win this battle!")
 
 
@@ -77,8 +77,8 @@ while (gameIsOn === true) {
         break
     }
     
-    var x = ask.question("Please provide an X coordinate for your attack: 0-9.");
-    var y = ask.question("Please provide a Y coordinate for your attack: 0-9.");
+    let x = ask.question("Please provide an X coordinate for your attack: 0-9.");
+    let y = ask.question("Please provide a Y coordinate for your attack: 0-9.");
 
     checkCoords(x);
     checkCoords(y);

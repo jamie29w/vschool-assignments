@@ -3,10 +3,10 @@
 
 //Turn an array of numbers into a total of all the numbers
 
-var array1 = [1, 2, 3, 4]
+const array1 = [1, 2, 3, 4]
 
 function total(arr) {
-    var totalArr = arr.reduce(function(prev, currNum) {
+    let totalArr = arr.reduce(function(prev, currNum) {
             return prev + currNum;
         });
     return totalArr;
@@ -17,7 +17,7 @@ console.log(total(array1));
 
 //Turn an array of numbers into a long string of all those numbers.
 //function stringConcat(arr) {
-//    var string = arr.reduce(function(prev, currChar) {
+//    let string = arr.reduce(function(prev, currChar) {
 //        if (typeof prev === "number") {
 //            prev = prev.toString();
 //        }
@@ -30,7 +30,7 @@ console.log(total(array1));
 
 
 function stringConcat(arr) {
-    var string = arr.reduce(function(prev, currChar) {
+    let string = arr.reduce(function(prev, currChar) {
 //        if (typeof prev === "number") {
 //            prev = prev.toString();
 //        }
@@ -44,7 +44,7 @@ console.log(stringConcat(array1));
 
 //Turn an array of voter objects into a count of how many people voted
 
-var voters = [  
+const voters = [  
     {name:'Bob' , age: 30, voted: true},
     {name:'Jake' , age: 32, voted: true},
     {name:'Kate' , age: 25, voted: false},
@@ -61,7 +61,7 @@ var voters = [
 
 function totalVotes(arr) {
     didVote = 0;
-    var voted = arr.reduce(function(results, currVoter) {
+    let voted = arr.reduce(function(results, currVoter) {
         return currVoter.voted ? results + 1 : results;
 //        ternary in place of if/else statement:
 //        if (currVoter.voted) {
@@ -78,7 +78,7 @@ console.log(totalVotes(voters)); //7
 
 //Given an array of all your wishlist items, figure out how much it would cost to just buy everything at once
 
-var wishlist = [  
+const wishlist = [  
     { title: "Tesla Model S", price: 90000 },
     { title: "4 carat diamond ring", price: 45000 },
     { title: "Fancy hacky Sack", price: 5 },
@@ -87,7 +87,7 @@ var wishlist = [
 ];
 
 function shoppingSpree(arr) {
-    var totalCost = arr.reduce(function(runningTotal, currItem) {
+    let totalCost = arr.reduce(function(runningTotal, currItem) {
         return runningTotal + currItem.price;
     }, 0);
     return totalCost;
@@ -98,14 +98,14 @@ console.log(shoppingSpree(wishlist)); // 227005
 
 //Given an array of arrays, flatten them into a single array
 
-var array5 = [  
+const array5 = [  
     ["1", "2", "3"],
     [true],
     [4, 5, 6]
 ];
 
 function flatten(arr) {
-    var newArr = arr.reduce(function(curr, nextArr) {
+    let newArr = arr.reduce(function(curr, nextArr) {
         return curr.concat(nextArr);
     }, []);
     return newArr;
@@ -117,14 +117,14 @@ function flatten(arr) {
 
 //Given an array of arrays (possibly with arrays), flatten them into a single array
 
-var array52 = [  
+const array52 = [  
     ["1", "2", "3", [7, 8, 9]],
     [true],
     [4, 5, 6]
 ];
 
 function flatten(arr) {
-    var newArr = arr.reduce(function(curr, nextArr) {
+    let newArr = arr.reduce(function(curr, nextArr) {
         if (!Array.isArray(nextArr)) {
             return curr;
         }
@@ -138,7 +138,7 @@ function flatten(arr) {
 
 //Given an array of voters, return an object representing the results of the vote, including how many of the voters were in the ages 18-25, how many from 26-35, how many from 36-55, and how many of each of those age ranges voted.
 
-var voters = [  
+const voters = [  
     {name:'Bob' , age: 30, voted: true},
     {name:'Jake' , age: 32, voted: true},
     {name:'Kate' , age: 25, voted: false},
@@ -154,7 +154,7 @@ var voters = [
 ];
 
 function voterResults(arr) {
-    var obj = {
+    let obj = {
         youngVotes: 0,
         youth: 0,
         midVotes: 0,

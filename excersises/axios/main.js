@@ -1,12 +1,12 @@
-var btn = document.getElementById("btn");
-var inputTitle = document.getElementById("inputTitle");
-var inputDescription = document.getElementById("inputDescription");
-var inputPrice = document.getElementById("inputPrice");
-var currList = document.getElementById("currList");
+const btn = document.getElementById("btn");
+const inputTitle = document.getElementById("inputTitle");
+const inputDescription = document.getElementById("inputDescription");
+const inputPrice = document.getElementById("inputPrice");
+const currList = document.getElementById("currList");
 
-function getList() {
+const getList = () => {
     axios.get("https://api.vschool.io/jamie/todo").then(function (response) {
-        for (var i = 0; i < response.data.length; i++) {
+        for (let i = 0; i < response.data.length; i++) {
             currList.innerHTML =
                 "<input type='checkbox' id='inlineCheckbox1' value='option1'>  " +
                 "<span class='toDoText'>" + response.data[i].title + "</span>" +
@@ -20,7 +20,7 @@ function getList() {
 getList();
 
 btn.addEventListener("click", function () {
-    var newTodo = {
+    const newTodo = {
         title: inputTitle.value,
         description: inputDescription.value,
         price: inputPrice.value

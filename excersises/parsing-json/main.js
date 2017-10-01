@@ -1,4 +1,4 @@
-var xhr = new XMLHttpRequest();
+const xhr = new XMLHttpRequest();
 
 document.getElementById("pokeHeader").innerHTML = "List of #allThePokemon:";
 
