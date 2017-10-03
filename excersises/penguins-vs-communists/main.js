@@ -1,91 +1,69 @@
-//class for parties
-//construct parties
-//randomGen attacks first
-//sendNuke fnc
-//randomGen dmg
-//hit/miss msg
-//while loop
-    //call attack, counterattack while both pops > 0
-
 class Party {
-    constructor(name, population, swagLevel) {
+    constructor(name, population, swagLevel, gnashers) {
         this.name = name;
         this.population = population;
         this.swagLevel = swagLevel;
+        this.gnashers = gnashers;
     };
 };
 
-const penguins = new Party ("Penguins", 1000000, 11);
-const communists = new Party ("Communists", 1000000, 6);
-console.log(penguins, communists);
+const penguins = new Party ("Penguins", 1000000, 11, "beaks");
+const communists = new Party ("Communists", 1000000, 6, "teeth");
 
-const getRandomInt = (min, max) => {
+console.log(`There are ${penguins.population} ${penguins.name} willing to stand their ground against the ${communists.population} ${communists.name} invaders. This is going to get slippery...`);
+console.log("");
+
+function getRandomInt(min, max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-                            
 
-
-const fightsFirst = () => {
-    let coinFlip = getRandomInt(1,2);
-    console.log("coinFlip: " + coinFlip);
-    if (coinFlip === 1) {
-        var first = penguins;
-        var second = communists;
-    } else if (coinFlip === 2) {
-        var first = communists;
-        var second = penguins;
+function flipCoin (party1, party2) {
+    let headsOrTails = getRandomInt(1,2);
+    if (headsOrTails === 1) {
+        while (party1.population > 0 && party2.population > 0) {
+            sendNuke(party1);
+                if (party1.population <= 0) {break};
+            sendNuke(party2);
+            console.log("");
+        };
+    } else {
+        while (party2.population > 0 && party1.population > 0) {
+            sendNuke(party2);
+                if (party2.population <= 0) {break};
+            sendNuke(party1);
+            console.log("");
+        };
     };
-    console.log(`first: ${first} & second: ${second}`);
-    return first && second;
 };
 
+function onHit (party){
+    let damage = getRandomInt(100000, 500000);
+    party.population = party.population - damage;
+    console.log(`${party.name} weep and gnash their ${party.gnashers}. ${damage} ${party.name} lost their lives today.`)
+};
 
-function sendNuke(party, onHit, onMiss){
-    
-}
+function onMiss (party){
+    console.log(`${party.name} holds a dance party! No lives lost.`)
+};
 
+function sendNuke (party, onHit, onMiss){
+    function onHit (party) {
+        let damage = getRandomInt(100000, 500000);
+        party.population = party.population - damage;
+        if (party.population > 0) {
+            console.log(`${party.name} weep and gnash their ${party.gnashers}. ${damage} ${party.name} lost their lives today.`);
+        } else {
+            console.log(`The ${party.name} have no tears to weep or ${party.gnashers} to gnash. They have perished from the Earth.`);
+            console.log("");
+        };
+    };
+    function onMiss (party) {
+        console.log(`${party.name} hold a dance party! No lives lost.`)
+    };
+    let hitOrMiss = getRandomInt(1,3);
+    if (hitOrMiss === 1) {
+        onHit(party);
+    } else onMiss(party);
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//const sendNuke = (party) => {
-//    let hitOrMiss = getRandomInt(1,3);
-//    if (hitOrMiss === 1) {
-//        onHit(party);
-//    } else {
-//        console.log(`${party.name} holds a dance party! No lives lost.`)
-//    };
-//};
-//
-//const onHit = (party) => {
-//    let damage = getRandomInt(100000, 500000);
-//    party.population = party.population - damage;
-//    console.log(`${party.name} weep and gnash their teeth. ${damage} ${party.name} lost their lives today.`)
-//};
-//
-////console.log(penguins, communists);
-//fightsFirst();
-//
-//
-//while (penguins.population > 0 && communists.population > 0) {
-//    sendNuke(first);
-//    sendNuke(second);
-//    console.log(`end of round`);
-//}
-//
-//
-
-
-
+flipCoin(penguins, communists);
