@@ -1,0 +1,28 @@
+div {
+    border: 1px dotted blue;
+}
+
+.navBar {
+    height: 100px;
+    text-align: center;
+}
+
+.navItem {
+    margin-left: 7%;
+    margin-right: 7%;
+    font-family: 'Encode Sans Expanded', sans-serif;
+    text-decoration: none;
+}
+
+.navItem:hover {}
+
+.brand {
+    height: 60px;
+    width: auto;
+    margin-top: 20px;
+}
+
+.footer {
+    height: 100px;
+    text-align: center;
+}
