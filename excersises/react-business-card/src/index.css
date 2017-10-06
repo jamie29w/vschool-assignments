@@ -1,0 +1,42 @@
+.box {
+    height: 300px;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.nameText {
+    position: absolute;
+    top: 15px;
+    font-size: 1em;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+
+img {
+    height: auto;
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.urlText {
+    position: absolute;
+    bottom: 15px;
+    font-size: .8em;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+}

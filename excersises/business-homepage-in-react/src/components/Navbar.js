@@ -1,8 +1,12 @@
 import React from "react";
 
-function Navbar() {
+function Navbar(props) {
+    const styles = {
+        background: 'url(${props.img}) no-repeat center center fixed',
+        backgroundSize: "100% 100%"
+    }
     return (
-        <div className="navBar">
+        <div className="navBar" style = {styles}>
             <a href="#" className="navItem ">About</a>
             <a href="#" className="navItem ">Portfolio</a>
             <img className="navItem brand" src={require("../assets/kitson-creative-logo.jpg")}/>

@@ -2,6 +2,12 @@ div {
     border: 1px dotted blue;
 }
 
+.navBG {
+    height: 60px;
+    width: 100%;
+    /*margin-top: 20px;*/
+}
+
 .navBar {
     height: 100px;
     text-align: center;
@@ -14,7 +20,9 @@ div {
     text-decoration: none;
 }
 
-.navItem:hover {}
+.navItem:hover {
+    color: rgba(11, 29, 151, .6);
+}
 
 .brand {
     height: 60px;
