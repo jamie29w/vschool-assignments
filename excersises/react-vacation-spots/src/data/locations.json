@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Hawaii",
+        "region": "Pacific Ocean",
+        "continent": "Americas",
+        "price": "1300",
+        "bgColor": "LightSkyBlue"
+    },
+    {
+        "name": "London, UK",
+        "region": "United Kingdom",
+        "continent": "Europe",
+        "price": "1800",
+        "bgColor": "GoldenRod"
+    },
+    {
+        "name": "New York, New York",
+        "region": "New England USA",
+        "continent": "Americas",
+        "price": "1200",
+        "bgColor": "LightSkyBlue"
+    },
+    {
+        "name": "Tokyo, Japan",
+        "region": "East Asia",
+        "continent": "Asia",
+        "price": "1100",
+        "bgColor": "GoldenRod"
+    },
+    {
+        "name": "Seattle, WA",
+        "region": "Pacific Northwest",
+        "continent": "Americas",
+        "price": "700",
+        "bgColor": "LightSkyBlue"
+    },
+    {
+        "name": "Rome, Italy",
+        "region": "Southern Europe",
+        "continent": "Europe",
+        "price": "1800",
+        "bgColor": "GoldenRod"
+    }
+]
