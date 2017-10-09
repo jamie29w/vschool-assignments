@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import LocationList from "./LocationList"
 import Header from "./Header"
 
