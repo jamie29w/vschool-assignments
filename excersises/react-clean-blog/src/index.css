@@ -51,7 +51,7 @@
 
 .headerMenuButton {
     position: absolute;
-    right: 30px;
+    right: 10%;
     top: 2%;
     color: #777;
     transition: .15s;
@@ -73,15 +73,17 @@
     transform: translate(-50%, 0%);
 }
 
-.Row2BlogEntryContainer {
+.row2BlogEntryContainer {
     position: relative;
     padding-top: 40px;
     padding-bottom: 20px;
     left: 20%;
+    width: 60%;
+    /*width here instead of in.row2BlogEntryComponent*/
 }
 
-.Row2BlogEntryComponent {
-    width: 60%;
+.row2BlogEntryComponent {
+    /*width: 60%;*/
     box-sizing: border-box;
 }
 
@@ -119,10 +121,21 @@
     border-bottom: 1px solid lightgray;
 }
 
+.row2AuthorName {
+    color: black;
+    text-decoration: underline;
+}
+
+.row2AuthorName:hover {
+    color: #0085a1;
+    transition: .15s;
+}
+
 .row2Button {
     font-family: Open Sans, sans-serif;
     font-weight: 600;
     position: relative;
+    margin-left: 80%;
     color: white;
     background-color: #868e96;
 }

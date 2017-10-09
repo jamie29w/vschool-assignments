@@ -1,0 +1,22 @@
+[
+    {
+        "name": "V",
+        "imgSrc": "http://vignette3.wikia.nocookie.net/p__/images/7/7e/V_for_Vendetta_79894.jpg/revision/latest?cb=20131127033326&path-prefix=protagonist",
+        "catchPhrase": "A revolution without dancing is a revolution not worth having!"
+    },
+    {
+        "name": "Han Solo",
+        "imgSrc": "https://www.themarysue.com/wp-content/uploads/2016/03/han-solo-return-of-the-jedi_612x380.jpg",
+        "catchPhrase": "Get in there, you big furry oaf! I don't care what you smell!"
+    },
+    {
+        "name": "Walter White",
+        "imgSrc": "https://www.sideshowtoy.com/wp-content/uploads/2016/06/breaking-bad-walter-white-life-size-bust-supacraft-feature-902754.jpg",
+        "catchPhrase": "Chemistry is, well technically, chemistry is the study of matter. But I prefer to see it as the study of change."
+    },
+    {
+        "name": "Tyrion Lannister",
+        "imgSrc": "http://api.theweek.com/sites/default/files/styles/tw_image_9_4/public/4fb278c322023c2b01bb24cd9abb23d724504bd8c4804bd1d80e122389f7107afb815e50f19d1be5f75addab36029aa4.jpg?itok=qgRKGqk4&resize=1260x560",
+        "catchPhrase": "That's what I do: I drink and I know things."
+    }
+]
