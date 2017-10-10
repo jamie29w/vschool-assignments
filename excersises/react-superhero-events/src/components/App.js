@@ -1,10 +1,10 @@
 import React from "react"
-import Superhero from "./Superhero"
+import Antihero from "./Antihero"
 import heroes from "../data/heroes.json"
 
 function genHeroes() {
     return heroes.map((heroObj, i) => {
-        return <Superhero obj = {heroObj} handleClick = {handleClick} key = {heroObj.name + i} /> 
+        return <Antihero obj = {heroObj} handleClick = {handleClick} key = {heroObj.name + i} /> 
     })
 }
 

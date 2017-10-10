@@ -1,4 +1,6 @@
-.heroNameText {}
+.heroNameText {
+    font-family: Roboto, sans-serif;
+}
 
 .heroImg {
     width: 400px;

@@ -1,6 +1,6 @@
 import React from "react"
 
-function Superhero(props) {
+function Antihero(props) {
     return (
         <div onClick = {() => {props.handleClick(props.obj.catchPhrase)}}>
             <div className="heroNameText">{props.obj.name}</div>
@@ -9,4 +9,4 @@ function Superhero(props) {
     )
 }
 
-export default Superhero
+export default Antihero
