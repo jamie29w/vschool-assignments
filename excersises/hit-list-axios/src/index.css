@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url("https://blog.spoongraphics.co.uk/wp-content/uploads/2012/textures/18.jpg");
+    margin: 0px;
+}
+
+.appDivClass {
+}
+
+.headerDivClass {
+    position: relative;
+    width: 100%;
+    min-height: 150px;
+    background-color: black;
+    min-width: 620px;
+}
+
+.headerImageClass {
+    width: auto;
+    height: 150px;
+    display: inline-block;
+    position: absolute;
+}
+
+.headerTextClass {
+    /*position: relative;*/
+    display: inline-block;
+    color: #fafafa;
+    font-size: 5em;
+    padding-top: 30px;
+    margin-left: 350px;
+    font-family: godfather;
+}
+
+.hitListClass {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+    /*box-sizing: border-box;*/
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.hitComponentClass {
+    flex-basis: 33%;
+}
+
+.hitComponentText {
+    font-size: 1.3em;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.hitListImagesClass {
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+}
+
+@font-face {
+    font-family: "godfather";
+    src: url(./assets/theGodfather.ttf) format("truetype");
+}

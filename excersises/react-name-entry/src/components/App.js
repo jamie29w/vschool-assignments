@@ -13,6 +13,23 @@ class App extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
+    componentWillMount() {
+        console.log(`componentWillMount`)
+    }
+
+    componentDidMount() {
+        console.log(`componentDidMount`)
+    }
+
+    componentWillUnmount() {
+        console.log(`componentWillUnmount`)
+        //unmount process goes here, if needed
+    }
+
+    shouldComponentUpdate() {
+        console.log(`shouldComponentUpdate`)
+    }
+
     handleChange(event) {
         this.setState({
             nameInput: event.target.value

@@ -32,11 +32,13 @@
 .row1BodyDiv {
     width: 100%;
     height: 430px;
-    background: url("https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg") no-repeat center center;
+    background: url("https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg")
+        no-repeat center center;
     background-size: cover;
     background-attachment: scroll;
     text-align: center;
     color: white;
+    /*border: 2px dotted blue;*/
 }
 
 .row1HeaderDiv {
@@ -54,7 +56,7 @@
     right: 10%;
     top: 2%;
     color: #777;
-    transition: .15s;
+    transition: 0.15s;
 }
 
 .cleanBlogText {
@@ -96,7 +98,7 @@
 
 .entryNameDiv:hover {
     color: #0085a1;
-    transition: .15s;
+    transition: 0.15s;
 }
 
 .entrySubtitleDiv {
@@ -108,12 +110,12 @@
 
 .entrySubtitleDiv:hover {
     color: #0085a1;
-    transition: .15s;
+    transition: 0.15s;
 }
 
 .entryByDiv {
     font-size: 1em;
-    font-family: 'Fjord One', serif;
+    font-family: "Fjord One", serif;
     box-sizing: border-box;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -128,7 +130,7 @@
 
 .row2AuthorName:hover {
     color: #0085a1;
-    transition: .15s;
+    transition: 0.15s;
 }
 
 .row2Button {
@@ -142,8 +144,8 @@
 
 .row2Button:hover {
     color: white;
-    background-color: #727B84;
-    transition: .15s;
+    background-color: #727b84;
+    transition: 0.15s;
 }
 
 .row3FooterDiv {
@@ -168,7 +170,7 @@
 
 .blackCircles:hover {
     background-color: #0085a1;
-    transition: .15s;
+    transition: 0.15s;
 }
 
 .icons {
@@ -189,5 +191,5 @@
 
 @font-face {
     font-family: "wlm-idea";
-    src: url(./assets/wlm-idea-fonts/wlm-idea-regular.ttf) format('truetype');
+    src: url(./assets/wlm-idea-fonts/wlm-idea-regular.ttf) format("truetype");
 }
