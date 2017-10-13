@@ -8,7 +8,9 @@ function Header() {
                 src="https://media.giphy.com/media/KQER23aFnrfSU/giphy-facebook_s.jpg"
                 alt=""
             />
-            <div className="headerTextClass">Don Corleones Favorite People</div>
+            <div className="headerTextClass">
+                Don Corleone{`'`}s Favorite People
+            </div>
         </div>
     );
 }
