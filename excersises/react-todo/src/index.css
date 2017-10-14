@@ -1,0 +1,32 @@
+body {
+    margin: 0px;
+    background: url("http://www.pptbackgrounds.org/uploads/yellow-abstract-cubes-ppt-design--powerpoint-backgrounds.jpg")
+        no-repeat center center fixed;
+    background-size: cover;
+    /*word-break: break-all;*/
+}
+
+.show {
+    display: inherit;
+}
+
+.hide {
+    display: none;
+}
+
+.btn-primary {
+    background-color: #9b3aa1;
+    border-color: #9b3aa1;
+}
+.btn-primary:hover {
+    background-color: #275f90;
+    border-color: #9b3aa1;
+}
+
+.btn-success:hover {
+    background-color: #275f90;
+}
+
+.btn-danger:hover {
+    background-color: #275f90;
+}

@@ -1,11 +1,12 @@
 import React from "react";
 import TodoList from "./components/TodoList";
+import { Grid } from "react-bootstrap";
 
 function App() {
     return (
-        <div>
+        <Grid>
             <TodoList />
-        </div>
+        </Grid>
     );
 }
 

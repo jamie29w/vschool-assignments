@@ -1,5 +1,5 @@
 import React from "react";
-import TodoComponent from "./TodoComponent";
+import TodoItemContainer from "./TodoItemContainer";
 import axios from "axios";
 
 class TodoList extends React.Component {
@@ -13,9 +13,10 @@ class TodoList extends React.Component {
             }
         };
 
-        this.handleClickAdd = this.handleClickAdd.bind(this);
+        this.addTodo = this.addTodo.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this.handleClickDel = this.handleClickDel.bind(this);
+        this.deleteTodo = this.deleteTodo.bind(this);
+        this.editTodo = this.editTodo.bind(this);
     }
 
     componentDidMount() {
@@ -38,23 +39,34 @@ class TodoList extends React.Component {
         });
     }
 
-    handleClickAdd(event) {
-        axios
-            .post(`https://api.vschool.io/jamie/todo/`, this.state.newTodo)
-            .then(response => {
-                this.setState(prevState => {
-                    return {
-                        todoList: [response.data, ...prevState.todoList],
-                        newTodo: {
-                            title: "",
-                            description: ""
-                        }
-                    };
+    addTodo(event) {
+        event.preventDefault();
+        if (this.state.newTodo.title === "") {
+            alert("Please provide a title for your Todo.");
+        } else {
+            axios
+                .post(`https://api.vschool.io/jamie/todo/`, this.state.newTodo)
+                .then(response => {
+                    this.setState(prevState => {
+                        return {
+                            todoList: [response.data, ...prevState.todoList],
+                            newTodo: {
+                                title: "",
+                                description: ""
+                            }
+                        };
+                    });
+                })
+                .catch(error => {
+                    alert(
+                        error,
+                        "Please try sending us your Todo again, or refresh your browser."
+                    );
                 });
-            });
+        }
     }
 
-    handleClickDel(id) {
+    deleteTodo(id) {
         axios
             .delete(`https://api.vschool.io/jamie/todo/${id}`)
             .then(response => {
@@ -68,13 +80,32 @@ class TodoList extends React.Component {
             });
     }
 
+    editTodo(id, editedTodo) {
+        axios
+            .put(`https://api.vschool.io/jamie/todo/${id}`, editedTodo)
+            .then(response => {
+                let newEdit = response.data;
+                this.setState(prevState => {
+                    const newTodos = prevState.todoList.map(todo => {
+                        if (todo._id === id) {
+                            return newEdit;
+                        } else {
+                            return todo;
+                        }
+                    });
+                    return {
+                        todoList: newTodos
+                    };
+                });
+            });
+    }
+
     render() {
         const inputStyles = {
-            marginTop: "5%",
+            marginTop: "1%",
             marginLeft: "2%",
             marginRight: "2%",
-            marginBottom: "3%",
-            width: "20%",
+            width: "200px",
             display: "inline"
         };
 
@@ -82,41 +113,46 @@ class TodoList extends React.Component {
             display: "block",
             marginLeft: "auto",
             marginRight: "auto",
-            paddingLeft: ""
+            marginTop: "6%",
+            marginBottom: "6%",
+            paddingLeft: "",
+            width: "200px"
         };
         return (
             <div>
-                <input
-                    onChange={this.handleChange}
-                    name="title"
-                    placeholder="Your Next Todo"
-                    type="text"
-                    value={this.state.newTodo.title}
-                    style={inputStyles}
-                    className={"form-control input-md"}
-                />
-                <input
-                    onChange={this.handleChange}
-                    name="description"
-                    placeholder="Add a Description"
-                    type="text"
-                    value={this.state.newTodo.description}
-                    style={inputStyles}
-                    className={"form-control input-md"}
-                />
-                <button
-                    className="btn btn-primary"
-                    style={buttonStyles}
-                    onClick={this.handleClickAdd}>
-                    Add to List
-                </button>
-                {this.state.todoList.map((obj, i) => {
+                <form onSubmit={this.addTodo}>
+                    <input
+                        onChange={this.handleChange}
+                        name="title"
+                        placeholder="Your Next Todo"
+                        type="text"
+                        value={this.state.newTodo.title}
+                        style={inputStyles}
+                        className={"form-control input-md"}
+                    />
+                    <input
+                        onChange={this.handleChange}
+                        name="description"
+                        placeholder="Add a Description"
+                        type="text"
+                        value={this.state.newTodo.description}
+                        style={inputStyles}
+                        className={"form-control input-md"}
+                    />
+                    <button className="btn btn-danger" style={buttonStyles}>
+                        Add it to the List
+                    </button>
+                </form>
+
+                {this.state.todoList.map((todo, i) => {
                     return (
-                        <TodoComponent
-                            todo={obj}
-                            key={obj.title + i}
-                            handleClickDel={this.handleClickDel}
-                        />
+                        <div key={todo.title + i}>
+                            <TodoItemContainer
+                                todo={todo}
+                                deleteTodo={this.deleteTodo}
+                                editTodo={this.editTodo}
+                            />
+                        </div>
                     );
                 })}
             </div>

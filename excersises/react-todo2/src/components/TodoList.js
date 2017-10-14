@@ -1,6 +1,15 @@
 import React from "react";
+import AddTodoForm from "./AddTodoForm";
 import TodoItem from "./TodoItem";
 import axios from "axios";
+import {
+    Button,
+    FormGroup,
+    FormControl,
+    Grid,
+    Row,
+    Col
+} from "react-bootstrap";
 
 class TodoList extends React.Component {
     constructor() {
@@ -68,31 +77,52 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <input
-                    type="text"
-                    placeholder="Your Next Todo"
-                    value={this.state.newTodo.title}
-                    name="title"
-                    onChange={this.handleChange}
-                />
-                <input
-                    type="text"
-                    placeholder="Description"
-                    value={this.state.newTodo.description}
-                    name="description"
-                    onChange={this.handleChange}
-                />
-                <button onClick={this.postTodo}>Add Todo</button>
-
-                {this.state.todos.map((item, i) => {
-                    return (
-                        <TodoItem
-                            todo={item}
-                            deleteTodo={this.deleteTodo}
-                            key={item.title + i}
+                <Row>
+                    <Col xs={8} xsOffset={2} sm={6} smOffset={3}>
+                        <AddTodoForm
+                            handleChange={this.handleChange}
+                            state={this.state}
+                            handleClick={this.postTodo}
                         />
-                    );
-                })}
+                        {/*<FormGroup>
+                            <FormControl
+                                type="text"
+                                placeholder="Your Next Todo"
+                                value={this.state.newTodo.title}
+                                name="title"
+                                onChange={this.handleChange}
+                            />
+                            <FormControl
+                                type="text"
+                                placeholder="Description"
+                                value={this.state.newTodo.description}
+                                name="description"
+                                onChange={this.handleChange}
+                            />
+                            <Button onClick={this.postTodo}>Add Todo</Button>
+                        </FormGroup>*/}
+                    </Col>
+                </Row>
+
+                <Row>
+                    {this.state.todos.map((item, i) => {
+                        return (
+                            <Col
+                                xs={8}
+                                xsOffset={2}
+                                sm={6}
+                                smOffset={0}
+                                md={4}
+                                mdOffset={0}>
+                                <TodoItem
+                                    todo={item}
+                                    deleteTodo={this.deleteTodo}
+                                    key={item.title + i}
+                                />
+                            </Col>
+                        );
+                    })}
+                </Row>
             </div>
         );
     }
