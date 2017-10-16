@@ -1,5 +1,5 @@
 import React from "react";
-import TodoComponent from "./TodoComponent";
+import TodoContainer from "./TodoContainer";
 import axios from "axios";
 
 class TodoList extends React.Component {
@@ -54,13 +54,17 @@ class TodoList extends React.Component {
     }
 
     deleteTodo(id) {
-        axios.delete(`https://api.vschool.io/jamie/todo/`).then(response => {
-            this.setState(prevState => {
-                return {
-                    todoList: prevState.todoList.filter(todo => todo._id !== id)
-                };
+        axios
+            .delete(`https://api.vschool.io/jamie/todo/${id}`)
+            .then(response => {
+                this.setState(prevState => {
+                    return {
+                        todoList: prevState.todoList.filter(
+                            todo => todo._id !== id
+                        )
+                    };
+                });
             });
-        });
     }
 
     render() {
@@ -83,7 +87,7 @@ class TodoList extends React.Component {
                 <button onClick={this.postNewTodo}>Add!</button>
                 {this.state.todoList.map((todo, i) => {
                     return (
-                        <TodoComponent
+                        <TodoContainer
                             todo={todo}
                             key={todo.title + i}
                             deleteTodo={this.deleteTodo}

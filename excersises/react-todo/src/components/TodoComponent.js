@@ -4,10 +4,14 @@ function TodoComponent(props) {
     const divStyle = {
         marginTop: "6%"
     };
-    const todoTextStyle = {
+
+    const todoTextStyle1 = {
         color: "#327AB7",
-        marginTop: "1%",
-        marginBottom: "1%"
+        marginTop: "8%"
+    };
+
+    const todoTextStyle2 = {
+        color: "#327AB7"
     };
 
     const inputStyles = {
@@ -18,31 +22,36 @@ function TodoComponent(props) {
         display: "inline"
     };
 
-    const buttonStyles = {
+    const buttonStyles1 = {
         marginLeft: "2%",
         marginRight: "2%",
-        marginTop: "1%",
-        width: "200px",
-        display: "inline"
+        width: "60px",
+        display: "inline",
+        textAlign: "center"
     };
 
-    const checkboxStyles = {
-        display: "inline"
+    const buttonStyles2 = {
+        marginLeft: "auto",
+        marginRight: "auto",
+        marginTop: "6%",
+        width: "60px",
+        display: "block"
     };
+
     return (
         <div style={divStyle}>
-            <h2 style={todoTextStyle}>{props.todo.title}</h2>
-            <h4 style={todoTextStyle}>{props.todo.description}</h4>
+            <h2 style={todoTextStyle1}>{props.todo.title}</h2>
+            <h4 style={todoTextStyle2}>{props.todo.description}</h4>
             <button
-                style={buttonStyles}
+                style={buttonStyles1}
                 onClick={() => {
                     props.deleteTodo(props.todo._id);
                 }}
                 className="btn btn-success">
-                Complete (^‿^) Remove!
+                Done
             </button>
             <button
-                style={buttonStyles}
+                style={buttonStyles1}
                 className="btn btn-primary"
                 onClick={props.handleToggle}>
                 Edit
@@ -67,7 +76,10 @@ function TodoComponent(props) {
                         style={inputStyles}
                         className={"form-control input-md"}
                     />
-                    <button type="submit" className="btn btn-success">
+                    <button
+                        style={buttonStyles2}
+                        type="submit"
+                        className="btn btn-danger">
                         Save
                     </button>
                 </form>

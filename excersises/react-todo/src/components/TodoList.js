@@ -102,7 +102,7 @@ class TodoList extends React.Component {
 
     render() {
         const inputStyles = {
-            marginTop: "1%",
+            marginTop: "%",
             marginLeft: "2%",
             marginRight: "2%",
             width: "200px",

@@ -18,8 +18,14 @@ body {
     background-color: #9b3aa1;
     border-color: #9b3aa1;
 }
+
 .btn-primary:hover {
     background-color: #275f90;
+    border-color: #9b3aa1;
+}
+
+.btn-primary:focus {
+    background-color: #9b3aa1;
     border-color: #9b3aa1;
 }
 
