@@ -11,6 +11,26 @@ function TodoComponent(props) {
                 }}>
                 Delete!
             </button>
+            <button onClick={props.handleToggle}>Edit</button>
+            <div className={props.toggleDisplay ? "show" : "hide"}>
+                <form onSubmit={props.handleSubmit} action="">
+                    <input
+                        onChange={props.handleEdit}
+                        value={props.editedTodo.title}
+                        placeholder="Edit Title"
+                        type="text"
+                        name="title"
+                    />
+                    <input
+                        onChange={props.handleEdit}
+                        value={props.editedTodo.description}
+                        placeholder="Edit Description"
+                        type="text"
+                        name="description"
+                    />
+                    <button type="submit">Save</button>
+                </form>
+            </div>
         </div>
     );
 }

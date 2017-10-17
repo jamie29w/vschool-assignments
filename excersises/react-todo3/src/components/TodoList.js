@@ -67,6 +67,21 @@ class TodoList extends React.Component {
             });
     }
 
+    editTodo(id, editedTodo) {
+        axios.put(`https://api.vschool.io/jamie/todo/${id}`).then(response => {
+            let newEdit = response.data;
+            this.setState(prevState => {
+                const newTodos = prevState.todoList.map(todo => {
+                    if (todo._id === id) {
+                        return newEdit;
+                    } else {
+                        return todo;
+                    }
+                });
+            });
+        });
+    }
+
     render() {
         return (
             <div>
