@@ -5,11 +5,12 @@ const charFreq = phrase => {
     const charCount = {};
     const frequency = phraseArr.forEach(function(i) {
         if (charCount[i] === undefined) {
-            charCount[i] = 1
+            charCount[i] = 1;
         } else {
             charCount[i]++;
-        };
-    }); return charCount;
+        }
+    });
+    return charCount;
 };
 
 console.log(charFreq("yankees!!"));

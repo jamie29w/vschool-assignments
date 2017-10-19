@@ -23,12 +23,19 @@
     color: gray;
 }
 
-.link-text:hover {
+.link-text:hover,
+.link-text:active,
+.link-text:visited,
+.link-text:focus {
     color: rgba(128, 128, 128, 0.7);
     text-decoration: none;
 }
 
-.link a:hover {
+.link a:hover,
+.link a:active,
+.link a:visited,
+.link a:focus {
+    color: rgba(128, 128, 128, 0.7);
     text-decoration: none;
 }
 

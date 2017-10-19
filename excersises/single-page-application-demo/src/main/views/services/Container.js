@@ -35,9 +35,9 @@ export default class ServicesContainer extends React.Component {
     }
 
     searchById(id) {
-        return this.state.services.find(service => {
-            return id === service._id;
-        });
+        return this.state.services.filter(service => {
+            return id === services._id;
+        })[0];
     }
 
     genLinks() {
