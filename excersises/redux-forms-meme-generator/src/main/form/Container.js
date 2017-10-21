@@ -27,7 +27,7 @@ class FormContainer extends React.Component {
                 }
             };
         });
-        console.log(this.state.inputs);
+        // console.log(this.state.inputs);
     }
 
     handleSubmit(e) {

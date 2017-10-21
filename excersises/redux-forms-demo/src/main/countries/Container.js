@@ -12,7 +12,9 @@ class CountriesContainer extends React.Component {
 
     genList() {
         return this.props.countries.map((country, i) => {
-            return <Country key={country.name + i} country={country} />;
+            return (
+                <Country key={country.name + i} country={country} index={i} />
+            );
         });
     }
 

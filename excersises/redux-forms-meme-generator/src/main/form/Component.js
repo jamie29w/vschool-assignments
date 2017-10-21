@@ -1,5 +1,4 @@
 import React from "react";
-import MemeGen from "./MemeGen";
 
 function FormComponent(props) {
     return (

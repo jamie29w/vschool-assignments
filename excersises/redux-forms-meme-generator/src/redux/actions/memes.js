@@ -4,3 +4,17 @@ export function addMeme(meme) {
         meme
     };
 }
+
+export function deleteMeme(index) {
+    return {
+        type: "DELETE_MEME",
+        index
+    };
+}
+
+export function editMeme(index) {
+    return {
+        type: "EDIT_MEME",
+        index
+    };
+}

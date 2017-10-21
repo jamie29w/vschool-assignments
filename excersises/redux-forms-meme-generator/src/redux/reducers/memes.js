@@ -4,6 +4,9 @@ export function memes(prevMemes, action) {
         case "ADD_MEME":
             newMemes.push(action.meme);
             return newMemes;
+        case "DELETE_MEME":
+            newMemes.splice(action.index, 1);
+            return newMemes;
         default:
             return prevMemes;
     }
