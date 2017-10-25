@@ -1,8 +1,3 @@
-//connect editTodo fxn
-//render edit form
-//handle toggle display
-//handle inputs (local state)
-
 import React from "react";
 import EditFormComponent from "./Component";
 
