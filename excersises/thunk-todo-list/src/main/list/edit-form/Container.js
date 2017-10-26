@@ -22,6 +22,7 @@ class EditFormContainer extends React.Component {
     }
 
     handleToggle() {
+        console.log(this.props);
         this.setState(prevState => {
             return {
                 ...prevState,
