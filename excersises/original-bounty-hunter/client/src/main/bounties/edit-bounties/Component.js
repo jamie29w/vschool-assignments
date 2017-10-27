@@ -27,39 +27,47 @@ function EditBountiesComponent(props) {
                             value={props.inputs.bounty}
                         />
                     </div>
-                    <h3>Living:</h3>
-                    <div>
+                    <h3>
+                        Bounty Complete:{" "}
                         <input
                             onChange={props.handleChange}
                             name="living"
-                            // value="true"
-                            type="radio"
+                            // value={props.inputs.living}
+                            type="checkbox"
+                            checked={props.inputs.living === true}
                         />
-                        <span>Alive</span>
-                        <input
-                            onChange={props.handleChange}
-                            name="living"
-                            // value="false"
-                            type="radio"
-                        />
-                        <span>Deceased</span>
-                    </div>
-                    <h3>Allegiance:</h3>
+                    </h3>
+
+                    <h3>Type:</h3>
                     <div>
                         <input
                             onChange={props.handleChange}
                             name="type"
-                            value="Jedi"
+                            value="Human"
                             type="radio"
                         />
-                        <span>Jedi</span>
+                        <span>Human </span>
                         <input
                             onChange={props.handleChange}
                             name="type"
-                            value="Sith"
+                            value="Droid"
                             type="radio"
                         />
-                        <span>Sith</span>
+                        <span>Droid </span>
+                        <input
+                            onChange={props.handleChange}
+                            name="type"
+                            value="Wookie"
+                            type="radio"
+                        />
+                        <span>Wookie </span>
+                        <input
+                            onChange={props.handleChange}
+                            name="type"
+                            value="Ewok"
+                            type="radio"
+                        />
+                        <span>Ewok </span>
                     </div>
                     <div>
                         <button onClick={props.handleSaveSubmit}>Save</button>

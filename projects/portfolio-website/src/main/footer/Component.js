@@ -4,25 +4,15 @@ import { Grid, Row, Col } from "react-bootstrap";
 function FooterComponent(props) {
     const divStyles = {
         backgroundColor: "#2C2C2A",
-        color: "#F6F4F5",
         width: "100%",
-        // fontFamily: "museo-sans",
-        // fontWeight: "100",
-        // fontStyle: "normal",
-        textAlign: "center",
         padding: "15px",
-
         position: "relative",
-        bottom: "-15px"
+        bottom: "-15px",
+        textAlign: "center"
     };
 
     const colStyle = {
-        marginTop: "5px",
-        marginBottom: "5px"
-    };
-
-    const phoneText = {
-        fontSize: "12px"
+        color: "#F6F4F5"
     };
 
     return (
@@ -30,27 +20,46 @@ function FooterComponent(props) {
             <Grid>
                 <Row>
                     <Col style={colStyle} xs={6} sm={3}>
-                        <i className="fa fa-file fa-md" aria-hidden="true" />
+                        <a className="links" href="">
+                            <i
+                                className="fa fa-file fa-md"
+                                aria-hidden="true"
+                            />
+                        </a>
                     </Col>
                     <Col style={colStyle} xs={6} sm={3}>
-                        <i
-                            className="fa fa-linkedin-square fa-lg"
-                            aria-hidden="true"
-                        />
+                        <a className="links" href="">
+                            <i
+                                className="fa fa-linkedin-square fa-lg"
+                                aria-hidden="true"
+                            />
+                        </a>
                     </Col>
                     <Col style={colStyle} xs={6} sm={3}>
-                        <i className="fa fa-github fa-lg" aria-hidden="true" />
+                        <a className="links" href="">
+                            <i
+                                className="fa fa-github fa-lg"
+                                aria-hidden="true"
+                            />
+                        </a>
                     </Col>
                     <Col style={colStyle} xs={6} sm={3}>
-                        <i
-                            className="fa fa-envelope fa-md"
-                            aria-hidden="true"
-                        />
+                        <a className="links" href="">
+                            <i
+                                className="fa fa-envelope fa-md"
+                                aria-hidden="true"
+                            />
+                        </a>
                     </Col>
                 </Row>
                 <Row>
                     <Col xs={12}>
-                        <span style={phoneText}>775 360 0360</span>
+                        <a
+                            style={{ fontSize: "12px" }}
+                            className="links"
+                            href="tel:775-360-0360">
+                            775 360 0360
+                        </a>
                     </Col>
                 </Row>
             </Grid>

@@ -38,7 +38,10 @@ class EditBountiesContainer extends React.Component {
             return {
                 inputs: {
                     ...prevState.inputs,
-                    [e.target.name]: e.target.value
+                    [e.target.name]:
+                        e.target.type === "checkbox"
+                            ? e.target.checked
+                            : e.target.value
                 }
             };
         });

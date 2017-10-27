@@ -8,8 +8,8 @@ function BountyDisplay(props) {
                 {props.bounty.fName} {props.bounty.lName}
             </h1>
             <h3>Bounty: ${props.bounty.bounty}</h3>
-            <h3>Living: {props.bounty.living ? "Yes" : "Deceased"}</h3>
-            <h3>Allegiance: {props.bounty.type}</h3>
+            <h3>Bounty Complete: {props.bounty.living ? "Yes" : "No"}</h3>
+            <h3>Race: {props.bounty.type}</h3>
             <button
                 onClick={() => {
                     props.handleDeleteClick(props.bounty._id);
