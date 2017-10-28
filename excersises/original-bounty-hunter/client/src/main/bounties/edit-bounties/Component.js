@@ -1,13 +1,49 @@
 import React from "react";
 
 function EditBountiesComponent(props) {
+    const containerStyle = {
+        marginTop: "20px",
+        marginBottom: "20px"
+    };
+
+    const buttonStyles = {
+        display: "inline"
+    };
+
     return (
-        <div>
-            <button onClick={props.handleEditToggle}>Edit Bounty</button>
+        <div style={containerStyle}>
+            <hr />
+            <button style={buttonStyles} onClick={props.handleDeleteClick}>
+                Delete
+            </button>
+            <button style={buttonStyles} onClick={props.handleEditToggle}>
+                Edit Bounty
+            </button>
+            <button
+                className={props.toggleDisplay ? "hide" : "showButton"}
+                onClick={props.handleSaveSubmit}>
+                Save
+            </button>
+            {/*NEW*/}
             <div className={props.toggleDisplay ? "show" : "hide"}>
                 <form onSubmit={props.handleSaveSubmit}>
-                    <h3>Name:</h3>
-                    <div>
+                    <h1>
+                        Name: {props.inputs.fName} {props.inputs.lName}
+                    </h1>
+                    <h2>Bounty Reward: ${props.inputs.bounty}</h2>
+
+                    <h3>
+                        Bounty Complete: {props.inputs.living ? "Yes" : "No"}
+                    </h3>
+
+                    <h3>Type: {props.inputs.type}</h3>
+                </form>
+            </div>
+            {/*NEW*/}
+            <div className={props.toggleDisplay ? "hide" : "show"}>
+                <form onSubmit={props.handleSaveSubmit}>
+                    <h1>
+                        Name:{" "}
                         <input
                             onChange={props.handleChange}
                             name="fName"
@@ -20,13 +56,16 @@ function EditBountiesComponent(props) {
                             type="text"
                             value={props.inputs.lName}
                         />
+                    </h1>
+                    <h2>
+                        Bounty Reward:{" $"}
                         <input
                             onChange={props.handleChange}
                             name="bounty"
                             type="text"
                             value={props.inputs.bounty}
                         />
-                    </div>
+                    </h2>
                     <h3>
                         Bounty Complete:{" "}
                         <input
@@ -38,13 +77,14 @@ function EditBountiesComponent(props) {
                         />
                     </h3>
 
-                    <h3>Type:</h3>
-                    <div>
+                    <h3>
+                        Type:{" "}
                         <input
                             onChange={props.handleChange}
                             name="type"
                             value="Human"
                             type="radio"
+                            checked={props.types.Human}
                         />
                         <span>Human </span>
                         <input
@@ -52,6 +92,7 @@ function EditBountiesComponent(props) {
                             name="type"
                             value="Droid"
                             type="radio"
+                            checked={props.types.Droid}
                         />
                         <span>Droid </span>
                         <input
@@ -59,6 +100,7 @@ function EditBountiesComponent(props) {
                             name="type"
                             value="Wookie"
                             type="radio"
+                            checked={props.types.Wookie}
                         />
                         <span>Wookie </span>
                         <input
@@ -66,12 +108,10 @@ function EditBountiesComponent(props) {
                             name="type"
                             value="Ewok"
                             type="radio"
+                            checked={props.types.Ewok}
                         />
                         <span>Ewok </span>
-                    </div>
-                    <div>
-                        <button onClick={props.handleSaveSubmit}>Save</button>
-                    </div>
+                    </h3>
                 </form>
             </div>
         </div>

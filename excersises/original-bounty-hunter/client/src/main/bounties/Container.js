@@ -2,14 +2,14 @@ import React from "react";
 import BountiesComponent from "./Component";
 import { connect } from "react-redux";
 import { bounties } from "../../redux/actions";
-import BountyDisplay from "./Display";
+import EditBountiesContainer from "./edit-bounties/Container";
 
 class BountiesContainer extends React.Component {
     constructor(props) {
         super(props);
 
         this.genBountiesList = this.genBountiesList.bind(this);
-        this.handleDeleteClick = this.handleDeleteClick.bind(this);
+        // this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
 
     componentDidMount() {
@@ -19,18 +19,18 @@ class BountiesContainer extends React.Component {
     genBountiesList() {
         return this.props.bounties.map((bounty, i) => {
             return (
-                <BountyDisplay
+                <EditBountiesContainer
                     key={bounty.fName + i}
                     bounty={bounty}
-                    handleDeleteClick={this.handleDeleteClick}
+                    id={bounty._id}
                 />
             );
         });
     }
-    handleDeleteClick(id) {
-        // console.log(this.props.bounties);
-        this.props.deleteBounty(id);
-    }
+    // handleDeleteClick(id) {
+    //     // console.log(this.props.bounties);
+    //     this.props.deleteBounty(id);
+    // }
 
     render() {
         return <BountiesComponent genBountiesList={this.genBountiesList} />;

@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 const tuskSchema = new Schema({
     length: Number,
-    colorOptions: [String],
+    color: String,
     fromMale: {
         type: Boolean,
         default: true

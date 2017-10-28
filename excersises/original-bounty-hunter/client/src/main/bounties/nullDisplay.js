@@ -4,7 +4,7 @@ import EditBountiesContainer from "./edit-bounties/Container";
 function BountyDisplay(props) {
     return (
         <div>
-            <h1>
+            {/*<h1>
                 {props.bounty.fName} {props.bounty.lName}
             </h1>
             <h3>Bounty: ${props.bounty.bounty}</h3>
@@ -15,7 +15,7 @@ function BountyDisplay(props) {
                     props.handleDeleteClick(props.bounty._id);
                 }}>
                 Delete
-            </button>
+            </button>*/}
             <EditBountiesContainer
                 bounty={props.bounty}
                 id={props.bounty._id}

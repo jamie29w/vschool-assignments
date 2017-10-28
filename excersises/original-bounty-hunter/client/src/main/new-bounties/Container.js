@@ -10,7 +10,9 @@ class NewBountiesContainer extends React.Component {
         this.state = {
             inputs: {
                 fName: "",
-                lName: ""
+                lName: "",
+                bounty: 0,
+                type: ""
             }
         };
         this.handleChange = this.handleChange.bind(this);
