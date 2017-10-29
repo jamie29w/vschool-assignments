@@ -4,7 +4,7 @@ function Navbar(props) {
     const flexContainerStyles = {
         width: "100%",
         position: "static",
-        backgroundColor: "#273A64",
+        backgroundColor: "rgba(39, 58, 100, .9)",
         height: "5vh",
         top: "15px",
         fontFamily: "'Lato', sans-serif",
@@ -30,9 +30,7 @@ function Navbar(props) {
             <a className="links" style={linkStyles} href="#">
                 Skills
             </a>
-            <a className="links" style={linkStyles} href="#">
-                Experience
-            </a>
+
             <a className="links" style={linkStyles} href="#">
                 Contact
             </a>

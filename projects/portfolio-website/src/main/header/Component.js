@@ -1,22 +1,15 @@
 import React from "react";
-import { Grid, Row, Col } from "react-bootstrap";
-import backgroundUrl2 from "../../assets/iceland.jpg";
-import backgroundUrl1 from "../../assets/mountain.jpg";
-import backgroundUrl3 from "../../assets/marina-sparks.jpg";
+import backgroundUrl from "../../assets/marina-sparks.jpg";
 
 function HeaderComponent(props) {
     const divStyles = {
-        background: `url(${backgroundUrl3}) no-repeat center center`,
+        background: `url(${backgroundUrl}) no-repeat center center`,
         backgroundSize: "cover",
-        // backgroundColor: "#B8B8B6",
-
         width: "100%",
         minWidth: "375px",
         height: "75vh",
         postion: "relative",
-        // fontFamily: "'Open Sans', sans-serif",
         fontFamily: "'Lato', sans-serif",
-
         color: "#DCDCDC",
         zIndex: "50"
     };
@@ -44,7 +37,7 @@ function HeaderComponent(props) {
         <div style={divStyles}>
             <div style={textContainer}>
                 <h1 style={headText}>Jamie Woodmancy</h1>
-                <h2 style={subHeadText}>Web Developer</h2>
+                <h2 style={subHeadText}>Web & App Developer</h2>
             </div>
         </div>
     );
