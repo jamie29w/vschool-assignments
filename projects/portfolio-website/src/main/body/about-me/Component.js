@@ -50,6 +50,8 @@ function AboutMeComponent(props) {
             <h3 style={bodyTextStyles}>
                 tl;dr Value-Added | Elegant UX/UI | Empowering Others
             </h3>
+            <h3 style={bodyTextStyles}>Cheers!</h3>
+            <h3 style={bodyTextStyles}>-Jamie W</h3>
         </Col>
     );
 }
