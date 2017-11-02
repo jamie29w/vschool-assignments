@@ -9,12 +9,38 @@ postRoutes.get("/", (req, res) => {
     });
 });
 
-postRoutes.post("/");
+postRoutes.get("/:id", (req, res) => {
+    Post.findById(req.params.id, (err, foundPost) => {
+        if (err) return res.status(500).send(err);
+        return res.send(foundPost);
+    });
+});
 
-postRoutes.delete("/:id");
+postRoutes.post("/", (req, res) => {
+    const newPost = new Post(req.body);
+    newPost.save((err, postedPost) => {
+        if (err) return res.status(500).send(err);
+        return res.send(postedPost);
+    });
+});
 
-postRoutes.put("/:id");
+postRoutes.delete("/:id", (req, res) => {
+    Post.findByIdAndRemove(req.params.id, (err, deletedPost) => {
+        if (err) return res.status(500).send(err);
+        return res.send(deletedPost);
+    });
+});
 
-postRoutes.get("/:id");
+postRoutes.put("/:id", (req, res) => {
+    Post.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true },
+        (err, updatedPost) => {
+            if (err) return res.status(500).send(err);
+            return res.send(updatedPost);
+        }
+    );
+});
 
 module.exports = postRoutes;

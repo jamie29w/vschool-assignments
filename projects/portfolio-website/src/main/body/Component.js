@@ -1,6 +1,6 @@
 import React from "react";
 import { Grid, Row } from "react-bootstrap";
-import AboutMeComponent from "./about-me/Component";
+import HomeComponent from "./home/Component";
 import SkillsComponent from "./skills/Component";
 
 function BodyComponent(props) {
@@ -15,7 +15,7 @@ function BodyComponent(props) {
         <div style={divStyles}>
             <Grid>
                 <Row>
-                    <AboutMeComponent />
+                    <HomeComponent />
                 </Row>
                 <Row>
                     <SkillsComponent />

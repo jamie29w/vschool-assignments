@@ -1,7 +1,7 @@
 import React from "react";
 import { Col } from "react-bootstrap";
 
-function AboutMeComponent(props) {
+function HomeComponent(props) {
     const colStyles = {
         backgroundColor: "rgba(42, 46, 55, .7)",
         color: "#DCDCDC",
@@ -11,7 +11,10 @@ function AboutMeComponent(props) {
     };
 
     const headTextStyles = {
-        fontFamily: "'Open Sans', sans-serif",
+        fontFamily: "'Lato', sans-serif",
+        fontWeight: "100",
+        fontStyle: "italic",
+        fontSize: ".9em",
         marginTop: "25px",
         marginLeft: "25px",
         textAlign: "justify"
@@ -19,16 +22,35 @@ function AboutMeComponent(props) {
 
     const bodyTextStyles = {
         fontFamily: "'Lato', sans-serif",
-        fontSize: ".5em",
+        fontSize: ".55em",
         fontWeight: "300",
         marginBottom: "20px",
         textAlign: "justify",
-        lineHeight: "120%",
+        lineHeight: "125%",
         marginLeft: "25px",
-        marginRight: "25px"
+        marginRight: "25px",
+        letterSpacing: "0px"
     };
+
+    const tldrStyles = {
+        fontFamily: "'Lato', sans-serif",
+        fontSize: ".55em",
+        fontWeight: "100",
+        fontStyle: "italic",
+        marginBottom: "20px",
+        textAlign: "justify",
+        lineHeight: "125%",
+        marginLeft: "25px",
+        marginRight: "25px",
+        letterSpacing: "0px"
+    };
+    const punctuationStyles = {
+        color: "rgba(39, 58, 100, .9)",
+        fontWeight: "400"
+    };
+
     return (
-        <Col style={colStyles} xs={10} xsOffset={1}>
+        <Col style={colStyles} xs={10} xsOffset={1} sm={12} smOffset={0}>
             <h3 style={headTextStyles}>Hello world,</h3>
 
             <h3 style={bodyTextStyles}>
@@ -47,8 +69,10 @@ function AboutMeComponent(props) {
                 to do more and equipping others to as well. If you feel the
                 same, let{`'`}s change the world together.
             </h3>
-            <h3 style={bodyTextStyles}>
-                tl;dr Value-Added | Elegant UX/UI | Empowering Others
+            <h3 style={tldrStyles}>
+                tl;dr Value-Added <span style={punctuationStyles}>|</span>{" "}
+                Elegant UX/UI <span style={punctuationStyles}>|</span>{" "}
+                Empowering Others
             </h3>
             <h3 style={bodyTextStyles}>Cheers!</h3>
             <h3 style={bodyTextStyles}>-Jamie W</h3>
@@ -56,4 +80,4 @@ function AboutMeComponent(props) {
     );
 }
 
-export default AboutMeComponent;
+export default HomeComponent;

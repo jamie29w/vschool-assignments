@@ -3,17 +3,26 @@ import HeaderContainer from "./header/Container";
 import BodyContainer from "./body/Container";
 // import SkillsComponent from "./skills/Component";
 import FooterContainer from "./footer/Container";
-import NavbarComponent from "./navbar/Component";
+import NavbarContainer from "./navbar/Container";
 
-function App() {
-    return (
-        <div>
-            <NavbarComponent />
-            <HeaderContainer />
-            <BodyContainer />
-            <FooterContainer />
-        </div>
-    );
+class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            homeRef: {},
+            portfolioRef: {}
+        };
+    }
+    render() {
+        return (
+            <div>
+                <NavbarContainer />
+                <HeaderContainer />
+                <BodyContainer />
+                <FooterContainer />
+            </div>
+        );
+    }
 }
 
 export default App;

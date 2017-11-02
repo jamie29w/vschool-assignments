@@ -1,12 +1,12 @@
 import React from "react";
 import NewPostContainer from "./new-post/Container";
-import PostListContainer from "./post-list/Container";
+import ListContainer from "./list/Container";
 
 function App() {
     return (
         <div>
             <NewPostContainer />
-            <PostListContainer />
+            <ListContainer />
         </div>
     );
 }

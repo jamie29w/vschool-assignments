@@ -7,7 +7,7 @@ function HeaderComponent(props) {
         backgroundSize: "cover",
         width: "100%",
         minWidth: "375px",
-        height: "75vh",
+        height: "85vh",
         postion: "relative",
         fontFamily: "'Lato', sans-serif",
         color: "#DCDCDC",

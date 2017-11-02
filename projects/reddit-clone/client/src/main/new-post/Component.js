@@ -8,12 +8,16 @@ function NewPostComponent(props) {
             <FormGroup className={props.toggleDisplay ? "show" : "hide"}>
                 <FormControl
                     name="postTitle"
+                    value={props.inputs.title}
+                    onChange={props.handleChange}
                     type="text"
                     placeholder="Title here..."
                     style={{ width: "60%" }}
                 />
                 <textarea
                     name="postBody"
+                    value={props.inputs.text}
+                    onChange={props.handleChange}
                     className="form-control"
                     placeholder="Your thoughts here..."
                     id=""

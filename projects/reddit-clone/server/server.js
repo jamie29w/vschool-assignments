@@ -13,11 +13,19 @@ app.use(bodyParser.json());
 app.use(morgan("dev"));
 app.use("/posts", postRoutes);
 
-mongoose.connect(`mongodb://localhost/posts`, err => {
-    if (err) throw err;
-    console.log(`Connected to da base`);
+// mongoose.connect(`mongodb://localhost/posts`, err => {
+//     if (err) throw err;
+//     console.log(`Connected to da base`);
+// });
+
+mongoose.connect("mongodb://localhost/posts", {
+    keepAlive: true,
+    reconnectTries: Number.MAX_VALUE,
+    useMongoClient: true
 });
 
+mongoose.Promise = global.Promise;
+
 app.listen(port, () => {
-    console.log(`Kreecher is watching port ${port}`);
+    console.log(`Kreecher has been watching port ${port}`);
 });
