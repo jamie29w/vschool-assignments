@@ -2,11 +2,24 @@ const express = require("express");
 const puppyRoutes = express.Router();
 const Puppy = require("../models/puppy");
 
+// puppyRoutes.get("/", (req, res) => {
+//     Puppy.find(req.query, (err, foundPuppies) => {
+//         if (err) return res.status(500).send(err);
+//         return res.send(foundPuppies);
+//     });
+// });
+
 puppyRoutes.get("/", (req, res) => {
-    Puppy.find(req.query, (err, foundPuppies) => {
-        if (err) return res.status(500).send(err);
-        return res.send(foundPuppies);
-    });
+    const query = {};
+    if (req.query.name) {
+        query.name = req.query.name;
+    }
+    Puppy.find(query)
+        .populate("address")
+        .exec((err, foundPuppies) => {
+            if (err) return res.status(500).send(err);
+            return res.send(foundPuppies);
+        });
 });
 
 puppyRoutes.get("/:id", (req, res) => {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-const puppySchema = new mongoose.Schema({
+const puppySchema = new Schema({
     breed: {
         required: true,
         type: String
@@ -15,7 +15,14 @@ const puppySchema = new mongoose.Schema({
         required: true,
         type: Number
     },
-    fixed: Boolean
+    fixed: Boolean,
+    address: {
+        type: Schema.Types.ObjectID,
+        ref: "Property"
+    }
 });
 
 module.exports = mongoose.model("Puppy", puppySchema);
+
+//store what you query for: we'll be looking for the puppy's address,
+//so we'll give the property the ref

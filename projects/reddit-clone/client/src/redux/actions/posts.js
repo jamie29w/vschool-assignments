@@ -45,3 +45,23 @@ export function editPost(id, editedPost) {
         });
     };
 }
+
+// export function upVote(id) {
+//     return dispatch => {
+//         axios.put(postsUrl + id).then(response => {
+//             dispatch({
+//                 type: "UP_VOTE"
+//             });
+//         });
+//     };
+// }
+//
+// export function downVote(id) {
+//     return dispatch => {
+//         axios.put(postsUrl + id).then(response => {
+//             dispatch({
+//                 type: "DOWN_VOTE"
+//             });
+//         });
+//     };
+// }

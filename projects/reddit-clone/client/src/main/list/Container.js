@@ -1,6 +1,6 @@
 import React from "react";
 import ListComponent from "./Component";
-import Post from "./Post";
+import PostContainer from "./post/Container";
 import { connect } from "react-redux";
 import { posts } from "../../redux/actions";
 
@@ -9,7 +9,7 @@ class ListContainer extends React.Component {
         super(props);
 
         this.genList = this.genList.bind(this);
-        this.handleDelete = this.handleDelete.bind(this);
+        // this.handleDelete = this.handleDelete.bind(this);
     }
 
     componentDidMount() {
@@ -19,19 +19,18 @@ class ListContainer extends React.Component {
     genList() {
         return this.props.posts.map((post, i) => {
             return (
-                <Post
-                    post={post}
-                    key={post.title + i}
-                    id={post._id}
-                    handleDelete={this.handleDelete}
-                />
+                <PostContainer post={post} key={post.title + i} id={post._id} />
             );
         });
     }
 
-    handleDelete(id) {
-        this.props.deletePost(id);
-    }
+    // handleDelete(id) {
+    //     this.props.deletePost(id);
+    // }
+    //
+    // handleUpVote(id) {
+    //     this.props.editPost(id, this.state.inputs);
+    // }
 
     render() {
         return <ListComponent genList={this.genList} />;
