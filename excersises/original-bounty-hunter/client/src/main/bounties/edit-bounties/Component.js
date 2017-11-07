@@ -24,7 +24,6 @@ function EditBountiesComponent(props) {
                 onClick={props.handleSaveSubmit}>
                 Save
             </button>
-            {/*NEW*/}
             <div className={props.toggleDisplay ? "show" : "hide"}>
                 <form onSubmit={props.handleSaveSubmit}>
                     <h1>
@@ -39,7 +38,6 @@ function EditBountiesComponent(props) {
                     <h3>Type: {props.inputs.type}</h3>
                 </form>
             </div>
-            {/*NEW*/}
             <div className={props.toggleDisplay ? "hide" : "show"}>
                 <form onSubmit={props.handleSaveSubmit}>
                     <h1>

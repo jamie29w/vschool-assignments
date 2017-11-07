@@ -9,7 +9,6 @@ class BountiesContainer extends React.Component {
         super(props);
 
         this.genBountiesList = this.genBountiesList.bind(this);
-        // this.handleDeleteClick = this.handleDeleteClick.bind(this);
     }
 
     componentDidMount() {
@@ -27,10 +26,6 @@ class BountiesContainer extends React.Component {
             );
         });
     }
-    // handleDeleteClick(id) {
-    //     // console.log(this.props.bounties);
-    //     this.props.deleteBounty(id);
-    // }
 
     render() {
         return <BountiesComponent genBountiesList={this.genBountiesList} />;
