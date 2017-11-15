@@ -3,9 +3,7 @@ const passport = require("passport");
 const Strategy = require("passport-local");
 const jwt = require("jsonwebtoken");
 const settings = require("../settings");
-
 const User = require("../models/user");
-
 const authRouter = express.Router();
 
 passport.use(

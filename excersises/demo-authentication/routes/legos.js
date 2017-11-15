@@ -2,7 +2,6 @@ const express = require("express");
 const Lego = require("../models/legos");
 const expressJwt = require("express-jwt");
 const settings = require("../settings");
-
 const legoRouter = express.Router();
 
 const auth = expressJwt({ secret: settings.secret });
@@ -22,8 +21,8 @@ legoRouter
     })
     .post((req, res) => {
         let lego = new Lego(req.body);
+        //Mongoose knows to verify against the req.user._id
         lego.user = req.user;
-        //^^Mongoose knows to only use the req.user._id
         lego.save((err, newLego) => {
             if (err) return res.status(500).send(err);
             return res.status(201).send(newLego);
