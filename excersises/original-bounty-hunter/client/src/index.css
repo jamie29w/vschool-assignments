@@ -1,24 +1,24 @@
-.show {
-    display: inherit;
-}
-
-.showButton {
-    display: inline;
-}
-
-.hide {
-    display: none;
-}
-
-input {
-    margin-left: 5px;
-    margin-right: 5px;
-}
-
 button,
 h1,
 h2,
 h3,
 h4 {
-    margin: 10px;
+  margin: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+input {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.show {
+  display: inherit;
+}
+
+.showButton {
+  display: inline;
 }
