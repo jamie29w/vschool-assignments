@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import TodoComponent from './TodoComponent';
+// import NewTodosContainer from './NewTodosContainer';
 import axios from 'axios';
 const todoUrl = 'https:/api.vschool.io/jamie/todo/';
 
@@ -17,6 +18,14 @@ export default class TodoList extends Component {
   componentDidMount() {
     axios.get(todoUrl).then(response => {
       this.setState({ todos: response.data });
+    });
+  }
+
+  createTodo(todo) {
+    axios.post(todoUrl, todo).then(response => {
+      this.setState(prevState => {
+        return { todos: [response.data, ...prevState.todos] };
+      });
     });
   }
 
